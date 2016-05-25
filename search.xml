@@ -7,14 +7,14 @@
       <title><![CDATA[驱动引起的win10蓝屏问题]]></title>
       <url>http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>这是一个悲伤的故事</p>
-<h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><img src="/2016/05/25/驱动引起的win10蓝屏问题/pic1.jpg" alt="pic1.jpg" title="">
+<h1 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h1><img src="/2016/05/25/驱动引起的win10蓝屏问题/pic1.jpg" alt="pic1.jpg" title="">
 <blockquote>
 <p><strong>症状分析</strong>：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：<strong><em>critical_structure_corruption</em></strong></p>
 <p><strong>起始情况</strong>：当时我正在正常使用，系统突然自动关机，之后就开始不断蓝屏</p>
 </blockquote>
 <p>了解清楚基本情况后，决定先使用通常方法尝试解决</p>
 <hr>
-<h2 id="0x01-开始"><a href="#0x01-开始" class="headerlink" title="0x01 开始"></a>0x01 开始</h2><p>使用搜索引擎查询，得到<a href="http://www.xitongcheng.com/jiaocheng/win10_article_13907.html" target="_blank" rel="external">解决指导1</a></p>
+<h1 id="0x01-开始"><a href="#0x01-开始" class="headerlink" title="0x01 开始"></a>0x01 开始</h1><p>使用搜索引擎查询，得到<a href="http://www.xitongcheng.com/jiaocheng/win10_article_13907.html" target="_blank" rel="external">解决指导1</a></p>
 <p>考虑重装系统软件和环境重新配置比较麻烦，所以总结除去重装系统之外的解决方法有：</p>
 <blockquote>
 <ol>
@@ -38,7 +38,7 @@
 <p>当然也有可能像这里的盆友<a href="http://bbs.pcbeta.com/viewthread-1625971-2-1.html" target="_blank" rel="external">这样</a>，在<code>C:\Windows\Logs\CBS</code>查看CBS.log日志，找到对应的问题。虽然这里我没有找到。</p>
 <p><strong>ps</strong>: 软媒魔方的系统修复工具就是使用<code>SFC /scannow</code>命令</p>
 <hr>
-<h2 id="0x02-转机"><a href="#0x02-转机" class="headerlink" title="0x02 转机"></a>0x02 转机</h2><p>　　在尝试以上办法无效后，心情很无奈。 然而在一次系统正常运行时，弹出了3个ie的窗口，内容比较劲爆。意识到自己可能无意中<strong>中毒</strong>了。</p>
+<h1 id="0x02-转机"><a href="#0x02-转机" class="headerlink" title="0x02 转机"></a>0x02 转机</h1><p>　　在尝试以上办法无效后，心情很无奈。 然而在一次系统正常运行时，弹出了3个ie的窗口，内容比较劲爆。意识到自己可能无意中<strong>中毒</strong>了。</p>
 <p>　　有没有可能是这个原因导致的蓝屏呢？情况有转机！</p>
 <ul>
 <li><strong>新思路：进行全盘扫描杀毒: </strong></li>
@@ -47,7 +47,7 @@
 <p>　　　<strong>方法失败</strong></p>
 <p><strong>ps</strong>: 小A扫描之后确实再没有弹出过ie广告窗口，至少证明<strong>Avast</strong>比<strong>MSE</strong>还是好些</p>
 <hr>
-<h2 id="0x03-继续"><a href="#0x03-继续" class="headerlink" title="0x03 继续"></a>0x03 继续</h2><p>然后开始了漫长的dump文件分析</p>
+<h1 id="0x03-继续"><a href="#0x03-继续" class="headerlink" title="0x03 继续"></a>0x03 继续</h1><p>然后开始了漫长的dump文件分析</p>
 <h3 id="7-分析Dump文件"><a href="#7-分析Dump文件" class="headerlink" title="7. 分析Dump文件"></a>7. 分析Dump文件</h3><ol>
 <li><p>调整设置，使系统在蓝屏时生成minidump文件</p>
 <blockquote>
