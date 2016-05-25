@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[学习Markdown语法]]></title>
+      <url>http://madgd.github.io/2016/05/24/%E5%AD%A6%E4%B9%A0Markdown%E8%AF%AD%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h2 id="Markdown学习笔记"><a href="#Markdown学习笔记" class="headerlink" title="Markdown学习笔记"></a>Markdown学习笔记</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><pre><code>&gt;Markdown是一种轻量级的标记语言，它允许人们用易读易写的纯文本格式编写文档，然后转换成丰富的HTML页面。 ——[维基百科](http://zh.wikipedia.org/wiki/Markdown)
+</code></pre><blockquote>
+<p>Markdown是一种轻量级的标记语言，它允许人们用易读易写的纯文本格式编写文档，然后转换成丰富的HTML页面。 ——<a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">维基百科</a></p>
+</blockquote>
+<pre><code>标记文字为**粗体**或者*斜体*。创建[链接](http:\\madgd.github.io)或者一个[跳转](#jump)。段内`高亮`。
+</code></pre><p>标记文字为<strong>粗体</strong>或者<em>斜体</em>。创建<a href="http:\\madgd.github.io">链接</a>或者一个<a href="#jump">跳转</a>。段内<code>高亮</code>。</p>
+<pre><code>**段落缩进**：
+
+单个回车
+视为空格。
+
+连续回车
+
+才能分段。
+
+行尾加两个空格，这里-&gt;  
+即可段内换行。
+
+全角空格可以缩进
+
+　缩进一个空格
+
+　　缩进两个空格
+
+　　　缩进三个空格
+</code></pre><p><strong>段落缩进</strong>：</p>
+<p>单个回车<br>视为空格。</p>
+<p>连续回车</p>
+<p>才能分段。</p>
+<p>行尾加两个空格，这里-&gt;<br>即可段内换行。</p>
+<p>全角空格可以缩进</p>
+<p>　缩进一个空格</p>
+<p>　　缩进两个空格</p>
+<p>　　　缩进三个空格</p>
+<p><span id="jump">跳到这里<br><strong>:)</strong><br></span></p>
+<pre><code>**删除线**：
+
+~~删除线~~
+
+**分割线**：
+
+---
+</code></pre><p><strong>删除线</strong>：</p>
+<p><del>删除线</del></p>
+<p><strong>分割线</strong>：</p>
+<hr>
+<h3 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h3><pre><code>图像和链接非常类似，区别在开头加一个惊叹号： ![这是一个Logo图像](http://www.turingbook.com/Content/img/Turing.Gif)
+</code></pre><p>图像和链接非常类似，区别在开头加一个惊叹号： <img src="http://www.turingbook.com/Content/img/Turing.Gif" alt="这是一个Logo图像"></p>
+<p><strong>单行长文字</strong>：</p>
+<p>类似代码块，用4个空格开始</p>
+<pre><code>长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字长文字文字长文字长文字长文字长文字长文字长文字长文字长文字长文字文字长文字长文字长文字长文字长文字长文字长文字长文字长文字文字长文字长文字长文字长文字长文字长文字长文字长文字长文字文字长文字长文字长文字长文字长文字长文字长文字长文字长文字文字长文字长文字长文字长文字长文字长文字长文字长文字长文字
+</code></pre><hr>
+<pre><code>**代码块**：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mark</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> a <span class="keyword">in</span> set:</span><br><span class="line">        <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+</code></pre><p><strong>代码块</strong>：</p>
+<pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">mark</span><span class="params">()</span>:</span>
+    <span class="keyword">if</span> a <span class="keyword">in</span> set:
+        <span class="keyword">print</span> a
+</code></pre>
+<hr>
+<pre><code>**表格**：
+
+| Item      |    Value | Qty  |
+| :-------- | --------:| :--: |
+| Computer  | 1600 USD |  5   |
+| Phone     |   12 USD |  12  |
+| Pipe      |    1 USD | 234  |
+</code></pre><p><strong>表格</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:right">Value</th>
+<th style="text-align:center">Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Computer</td>
+<td style="text-align:right">1600 USD</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left">Phone</td>
+<td style="text-align:right">12 USD</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipe</td>
+<td style="text-align:right">1 USD</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<pre><code>**有序序列**：
+
+1. 第一
+2. 第二
+3. 第三
+
+**无序序列**：
++ 路飞
+  * 娜美
+  - 罗宾
+    + 山治
+    + 索隆
+
+**复选框**：
+- [x] 已完成事项
+- [ ] 待办事项1
+- [ ] 待办事项2
+</code></pre><p><strong>有序序列</strong>：</p>
+<ol>
+<li>第一</li>
+<li>第二</li>
+<li>第三</li>
+</ol>
+<p><strong>无序序列</strong>：</p>
+<ul>
+<li>路飞<ul>
+<li>娜美</li>
+</ul>
+<ul>
+<li>罗宾<ul>
+<li>山治</li>
+<li>索隆</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>复选框</strong>：</p>
+<ul>
+<li>[x] 已完成事项</li>
+<li>[ ] 待办事项1</li>
+<li>[ ] 待办事项2</li>
+</ul>
+<hr>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ol>
+<li><a href="http://www.jianshu.com/p/21d355525bdf" target="_blank" rel="external">Markdown入门学习小结</a></li>
+<li><a href="https://www.zybuluo.com/AntLog/note/63228" target="_blank" rel="external">Markdown，你只需要掌握这几个</a></li>
+<li><a href="http://wowubuntu.com/markdown/basic.html" target="_blank" rel="external">Markdown语法说明(简体中文版)</a></li>
+<li><a href="http://www.ituring.com.cn/article/23" target="_blank" rel="external">图灵社区:阅读：怎样使用Markdown</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[第一次]]></title>
+      <url>http://madgd.github.io/2016/05/17/%E7%AC%AC%E4%B8%80%E6%AC%A1/</url>
+      <content type="html"><![CDATA[<p>这是第一次尝试写博客~<br>在宝哥的指导下开始新的学习啦！</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://madgd.github.io/2016/05/17/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
