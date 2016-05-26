@@ -276,6 +276,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/26/给一组长度不定的数求这些数组合出的最大整数/" itemprop="url">
+                  给一组长度不定的数求这些数组合出的最大整数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-26T11:33:50+08:00" content="2016-05-26">
+              2016-05-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/26/给一组长度不定的数求这些数组合出的最大整数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/给一组长度不定的数求这些数组合出的最大整数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p>一个题目:</p>
+<blockquote>
+<p>给一组长短不一的数字，求这组数字前后链接能组成的最大整数。<br>如<code>87 879 8787</code>组成最大整数为<code>8798787</code></p>
+</blockquote>
+<h2 id="0x01-思路"><a href="#0x01-思路" class="headerlink" title="0x01 思路"></a>0x01 思路</h2><p>解题思路：  </p>
+<blockquote>
+<p>类比排序，按一定的比较方法比较大小，最大的在最前面，依次排列就可以组成最大整数。</p>
+</blockquote>
+<p>那么这里的关键是两个输入数字的比较函数的定义。定义如下：</p>
+<blockquote>
+<ol>
+<li>逐位比较两个输入数字，出现更大的数字者返回较大</li>
+<li>如果两个输入数字中较短数字是另一个数字的前导，则递归比较较长数字的剩余部分和共同部分</li>
+</ol>
+</blockquote>
+<p>对<strong>2</strong>举个例子：</p>
+<p>　<strong>比较<code>87878</code>和<code>87</code></strong>：</p>
+<p>第一次比较，<code>87</code>为前导相同部分，则比较<code>878</code>和<code>87</code>;<code>87</code>又相同，则比较<code>8</code>和<code>87</code>;相同部分是<code>8</code>,故比较剩余<code>7</code>和相同部分<code>8</code>，所以结果返回<code>87878</code>&lt;<code>87</code><br>显然<code>8787887</code>&gt;<code>8787878</code></p>
+<h2 id="0x02-代码"><a href="#0x02-代码" class="headerlink" title="0x02 代码"></a>0x02 代码</h2><p>这里只写比较函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare</span><span class="params">(intStr1, intStr2)</span>:</span></span><br><span class="line">    leng = min(len(intStr1), len(intStr2))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(leng):</span><br><span class="line">        <span class="keyword">if</span> intStr1[i] &gt; intStr2[i]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> intStr1[i] &lt; intStr2[i]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    <span class="keyword">if</span> leng == len(intStr1) == len(intStr2):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> compare(intStr1[:leng], intStr1[leng:]+intStr2[leng:])</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/25/驱动引起的win10蓝屏问题/" itemprop="url">
                   驱动引起的win10蓝屏问题
                 </a>
@@ -947,7 +1067,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -957,7 +1077,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
