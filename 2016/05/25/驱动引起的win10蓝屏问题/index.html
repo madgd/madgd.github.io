@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="这是一个悲伤的故事 0x00 问题  症状分析：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**critical_structure_corruption**   起始情况：当时我正在正常使用，系统突然自动关机，之后就开始不断蓝屏  了解清楚基本情况后，决定先使用通常方法尝试解决  0x01 开始使用搜索引擎查询，得到解决指导1 考虑重装系统软件和环境重新配置比较麻烦，所以总结除去重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="驱动引起的win10蓝屏问题">
+<meta property="og:url" content="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="madgd&#39;s blog">
+<meta property="og:description" content="这是一个悲伤的故事 0x00 问题  症状分析：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**critical_structure_corruption**   起始情况：当时我正在正常使用，系统突然自动关机，之后就开始不断蓝屏  了解清楚基本情况后，决定先使用通常方法尝试解决  0x01 开始使用搜索引擎查询，得到解决指导1 考虑重装系统软件和环境重新配置比较麻烦，所以总结除去重">
+<meta property="og:locale">
+<meta property="og:image" content="http://madgd.github.io/2016/05/25/img/win10bule1.jpg">
+<meta property="og:image" content="http://madgd.github.io/2016/05/25/img/win10bule2.jpg">
+<meta property="og:image" content="http://madgd.github.io/2016/05/25/img/win10bule3.jpg">
+<meta property="article:published_time" content="2016-05-25T03:18:09.000Z">
+<meta property="article:modified_time" content="2021-02-26T09:53:50.124Z">
+<meta property="article:author" content="madgd">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://madgd.github.io/2016/05/25/img/win10bule1.jpg">
+
+<link rel="canonical" href="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>驱动引起的win10蓝屏问题 | madgd's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">madgd's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="madgd">
+      <meta itemprop="description" content="let's party">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="madgd's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          驱动引起的win10蓝屏问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-05-25 11:18:09" itemprop="dateCreated datePublished" datetime="2016-05-25T11:18:09+08:00">2016-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-26 17:53:50" itemprop="dateModified" datetime="2021-02-26T17:53:50+08:00">2021-02-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是一个悲伤的故事</p>
+<h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p><img src="../img/win10bule1.jpg" alt="pic1"></p>
+<blockquote>
+<p><strong>症状分析</strong>：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**<em>critical_structure_corruption**</em></p>
+</blockquote>
+<blockquote>
+<p><strong>起始情况</strong>：当时我正在正常使用，系统突然自动关机，之后就开始不断蓝屏</p>
+</blockquote>
+<p>了解清楚基本情况后，决定先使用通常方法尝试解决</p>
+<hr>
+<h2 id="0x01-开始"><a href="#0x01-开始" class="headerlink" title="0x01 开始"></a>0x01 开始</h2><p>使用搜索引擎查询，得到<a target="_blank" rel="noopener" href="http://www.xitongcheng.com/jiaocheng/win10_article_13907.html">解决指导1</a></p>
+<p>考虑重装系统软件和环境重新配置比较麻烦，所以总结除去重装系统之外的解决方法有：</p>
+<blockquote>
+<ol>
+<li>可能由硬件错误导致，所以检察 <strong>主板 内存 硬盘</strong> 等硬件插口</li>
+<li>系统还原</li>
+<li>删除近期安装的软硬件及其驱动</li>
+<li>检测安全软件是否有冲突</li>
+<li>更新官方的稳定驱动</li>
+<li>使用 <code>SFC /scannow</code> 命令修复系统</li>
+<li>分析<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/8275fc868d277e46a03cf6d4.html">Dump文件</a></li>
+<li>重置系统(不需要系统启动盘，可自行重新安装并保留原文件，但会删除所有软件)</li>
+</ol>
+</blockquote>
+<h3 id="1-硬件原因"><a href="#1-硬件原因" class="headerlink" title="1. 硬件原因"></a>1. 硬件原因</h3><p>对接口进行清理并重新安装硬件，蓝屏依旧</p>
+<h3 id="2-系统还原"><a href="#2-系统还原" class="headerlink" title="2. 系统还原"></a>2. 系统还原</h3><p>升级windows10后竟然没有设置系统还原，此路不通。</p>
+<p><strong>教训: 开启系统还原的重要</strong></p>
+<h3 id="3-近期安装的软硬件"><a href="#3-近期安装的软硬件" class="headerlink" title="3. 近期安装的软硬件"></a>3. 近期安装的软硬件</h3><p>近期没有更新硬件，所以在 <code>控制面板--&gt;程序和功能</code> 中按时间排序，删除所有近期安装的软件。仍然没有效果。</p>
+<h3 id="4-安全软件冲突"><a href="#4-安全软件冲突" class="headerlink" title="4. 安全软件冲突"></a>4. 安全软件冲突</h3><p>一直只使用MSE，并没有这个问题。</p>
+<h3 id="5-更新官方驱动"><a href="#5-更新官方驱动" class="headerlink" title="5. 更新官方驱动"></a>5. 更新官方驱动</h3><p>分别尝试用 <strong>驱动精灵</strong> 和 <strong>设备管理器</strong> 更新驱动并重启， 仍然出现相同错误的蓝屏。</p>
+<h3 id="6-使用SFC-scannow命令"><a href="#6-使用SFC-scannow命令" class="headerlink" title="6. 使用SFC /scannow命令"></a>6. 使用<code>SFC /scannow</code>命令</h3><p>在CMD管理员权限执行后，检测系统完整度100%，完成修复。然而仍然蓝屏。</p>
+<p>当然也有可能像这里的盆友<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1625971-2-1.html">这样</a>，在<code>C:\Windows\Logs\CBS</code>查看CBS.log日志，找到对应的问题。虽然这里我没有找到。</p>
+<p><strong>ps</strong>: 软媒魔方的系统修复工具就是使用<code>SFC /scannow</code>命令</p>
+<hr>
+<h2 id="0x02-转机"><a href="#0x02-转机" class="headerlink" title="0x02 转机"></a>0x02 转机</h2><p>　　在尝试以上办法无效后，心情很无奈。 然而在一次系统正常运行时，弹出了3个ie的窗口，内容比较劲爆。意识到自己可能无意中<strong>中毒</strong>了。</p>
+<p>　　有没有可能是这个原因导致的蓝屏呢？情况有转机！</p>
+<ul>
+<li>**新思路：进行全盘扫描杀毒: **</li>
+</ul>
+<p>　　　安装Avast并进行全盘杀毒和开机启动杀毒。过程很漫长。正在杀完毒要启动系统时，又蓝屏了。</p>
+<p>　　　<strong>方法失败</strong></p>
+<p><strong>ps</strong>: 小A扫描之后确实再没有弹出过ie广告窗口，至少证明<strong>Avast</strong>比<strong>MSE</strong>还是好些</p>
+<hr>
+<h2 id="0x03-继续"><a href="#0x03-继续" class="headerlink" title="0x03 继续"></a>0x03 继续</h2><p>然后开始了漫长的dump文件分析</p>
+<h3 id="7-分析Dump文件"><a href="#7-分析Dump文件" class="headerlink" title="7. 分析Dump文件"></a>7. 分析Dump文件</h3><ol>
+<li><p>调整设置，使系统在蓝屏时生成minidump文件</p>
+<blockquote>
+<p>系统–高级系统设置–高级–启动和故障恢复–写人调试信息(选择小内存转储)</p>
+</blockquote>
+<p><img src="../img/win10bule2.jpg" alt="pic2"></p>
+<p><img src="../img/win10bule3.jpg" alt="pic3"></p>
+</li>
+<li><p>分析dump文件</p>
+<p>　<strong>分析方法参考<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/8275fc868d277e46a03cf6d4.html">分析dump文件</a></strong></p>
+<p>　分析结果是<code>0x109</code>错误 附加信息<code>1c</code> 定位为驱动错误, 详情看<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/library/windows/hardware/ff557228%28v=vs.85%29.aspx">msdn</a></p>
+</li>
+<li><p>驱动压力测试——找到不稳定驱动并排查问题</p>
+<p>　<strong>参考<a target="_blank" rel="noopener" href="http://answers.microsoft.com/en-us/windows/wiki/windows_10-update/driver-verifier-tracking-down-a-mis-behaving/f5cb4faf-556b-4b6d-95b3-c48669e4c983">驱动压力测试</a></strong></p>
+<p>　用<code>Verifier</code>开启测试后，启动阶段会不断蓝屏并生成<code>dump</code>文件，进入安全模式，使用<code>Verifier /reset</code>可以关闭测试。然后正常启动并用软件分析dump文件，找到错误的驱动来源。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">错误信息</th>
+<th align="right">对应的驱动</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">critical_structure_corruption(Bugcheck 0x109)</td>
+<td align="right">kavbootc64.sys</td>
+</tr>
+<tr>
+<td align="left">critical_structure_corruption(Bugcheck 0x109)</td>
+<td align="right">kavbootc.sys</td>
+</tr>
+<tr>
+<td align="left">critical_structure_corruption(Bugcheck 0x109)</td>
+<td align="right">vmci.sys</td>
+</tr>
+<tr>
+<td align="left">critical_structure_corruption(Bugcheck 0x109)</td>
+<td align="right">aswVmm.sys</td>
+</tr>
+<tr>
+<td align="left">critical_structure_corruption(Bugcheck c4)</td>
+<td align="right">bocomkeyflt.sys</td>
+</tr>
+<tr>
+<td align="left">critical_structure_corruption(Bugcheck 0x109)</td>
+<td align="right">atikmpag.sys(105c)</td>
+</tr>
+</tbody></table>
+<p>  　　　相继删除还排除了以上驱动后，卡在了<code>atikmpag.sys</code>。无论怎么更新该驱动，总会蓝屏。又用别的正常电脑运行驱动测试，也会出现蓝屏。 这次真的无力了。在花费了大量时间之后，只能放弃这种方法。</p>
+<p>  <strong>结论: 很难找到引发蓝屏的错误</strong></p>
+<h2 id="0x04-终结"><a href="#0x04-终结" class="headerlink" title="0x04 终结"></a>0x04 终结</h2><h3 id="8-重置系统"><a href="#8-重置系统" class="headerlink" title="8. 重置系统"></a>8. 重置系统</h3><p>这个不用多说了，选择保留文件就行。注意提前保存一下重要的文件。</p>
+<p>重置后安装驱动，配置环境，再没有出现蓝屏现象。</p>
+<p>欢迎大家和我交流。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/24/Markdown/" rel="prev" title="学习Markdown语法">
+      <i class="fa fa-chevron-left"></i> 学习Markdown语法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/" rel="next" title="给一组长度不定的数求这些数组合出的最大整数">
+      给一组长度不定的数求这些数组合出的最大整数 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">0x00 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E5%BC%80%E5%A7%8B"><span class="nav-number">2.</span> <span class="nav-text">0x01 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A1%AC%E4%BB%B6%E5%8E%9F%E5%9B%A0"><span class="nav-number">2.1.</span> <span class="nav-text">1. 硬件原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F"><span class="nav-number">2.2.</span> <span class="nav-text">2. 系统还原</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%91%E6%9C%9F%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E7%A1%AC%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">3. 近期安装的软硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%86%B2%E7%AA%81"><span class="nav-number">2.4.</span> <span class="nav-text">4. 安全软件冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%9B%B4%E6%96%B0%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8"><span class="nav-number">2.5.</span> <span class="nav-text">5. 更新官方驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E4%BD%BF%E7%94%A8SFC-scannow%E5%91%BD%E4%BB%A4"><span class="nav-number">2.6.</span> <span class="nav-text">6. 使用SFC &#x2F;scannow命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-%E8%BD%AC%E6%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">0x02 转机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-%E7%BB%A7%E7%BB%AD"><span class="nav-number">4.</span> <span class="nav-text">0x03 继续</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%88%86%E6%9E%90Dump%E6%96%87%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">7. 分析Dump文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-%E7%BB%88%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">0x04 终结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E9%87%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.1.</span> <span class="nav-text">8. 重置系统</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">madgd</p>
+  <div class="site-description" itemprop="description">let's party</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">madgd</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

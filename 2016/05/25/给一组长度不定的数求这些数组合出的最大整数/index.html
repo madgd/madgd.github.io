@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="0x00 问题一个题目:  给一组长短不一的数字，求这组数字前后链接能组成的最大整数。如87 879 8787组成最大整数为8798787  0x01 思路解题思路：    类比排序，按一定的比较方法比较大小，最大的在最前面，依次排列就可以组成最大整数。  那么这里的关键是两个输入数字的比较函数的定义。定义如下：   逐位比较两个输入数字，出现更大的数字者返回较大 如果两个输入数字中较短数字是另一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给一组长度不定的数求这些数组合出的最大整数">
+<meta property="og:url" content="http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/index.html">
+<meta property="og:site_name" content="madgd&#39;s blog">
+<meta property="og:description" content="0x00 问题一个题目:  给一组长短不一的数字，求这组数字前后链接能组成的最大整数。如87 879 8787组成最大整数为8798787  0x01 思路解题思路：    类比排序，按一定的比较方法比较大小，最大的在最前面，依次排列就可以组成最大整数。  那么这里的关键是两个输入数字的比较函数的定义。定义如下：   逐位比较两个输入数字，出现更大的数字者返回较大 如果两个输入数字中较短数字是另一">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-05-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-26T09:53:50.124Z">
+<meta property="article:author" content="madgd">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh'
+  };
+</script>
+
+  <title>给一组长度不定的数求这些数组合出的最大整数 | madgd's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">madgd's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+    <link itemprop="mainEntityOfPage" href="http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="madgd">
+      <meta itemprop="description" content="let's party">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="madgd's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          给一组长度不定的数求这些数组合出的最大整数
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-05-26 00:00:00" itemprop="dateCreated datePublished" datetime="2016-05-26T00:00:00+08:00">2016-05-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-26 17:53:50" itemprop="dateModified" datetime="2021-02-26T17:53:50+08:00">2021-02-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p>一个题目:</p>
+<blockquote>
+<p>给一组长短不一的数字，求这组数字前后链接能组成的最大整数。<br>如<code>87 879 8787</code>组成最大整数为<code>8798787</code></p>
+</blockquote>
+<h2 id="0x01-思路"><a href="#0x01-思路" class="headerlink" title="0x01 思路"></a>0x01 思路</h2><p>解题思路：  </p>
+<blockquote>
+<p>类比排序，按一定的比较方法比较大小，最大的在最前面，依次排列就可以组成最大整数。</p>
+</blockquote>
+<p>那么这里的关键是两个输入数字的比较函数的定义。定义如下：</p>
+<blockquote>
+<ol>
+<li>逐位比较两个输入数字，出现更大的数字者返回较大</li>
+<li>如果两个输入数字中较短数字是另一个数字的前导，则递归比较较长数字的剩余部分和共同部分</li>
+</ol>
+</blockquote>
+<p>对<strong>2</strong>举个例子：</p>
+<p>　**比较<code>87878</code>和<code>87</code>**：</p>
+<p>第一次比较，<code>87</code>为前导相同部分，则比较<code>878</code>和<code>87</code>;<code>87</code>又相同，则比较<code>8</code>和<code>87</code>;相同部分是<code>8</code>,故比较剩余<code>7</code>和相同部分<code>8</code>，所以结果返回<code>87878</code>&lt;<code>87</code><br>显然<code>8787887</code>&gt;<code>8787878</code></p>
+<h2 id="0x02-代码"><a href="#0x02-代码" class="headerlink" title="0x02 代码"></a>0x02 代码</h2><p>这里只写比较函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare</span>(<span class="params">intStr1, intStr2</span>):</span></span><br><span class="line">    leng = <span class="built_in">min</span>(<span class="built_in">len</span>(intStr1), <span class="built_in">len</span>(intStr2))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(leng):</span><br><span class="line">        <span class="keyword">if</span> intStr1[i] &gt; intStr2[i]:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> intStr1[i] &lt; intStr2[i]:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> leng == <span class="built_in">len</span>(intStr1) == <span class="built_in">len</span>(intStr2):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> compare(intStr1[:leng], intStr1[leng:]+intStr2[leng:])</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/" rel="prev" title="驱动引起的win10蓝屏问题">
+      <i class="fa fa-chevron-left"></i> 驱动引起的win10蓝屏问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" rel="next" title="重建hexo博客记">
+      重建hexo博客记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">0x00 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">0x01 思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">0x02 代码</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">madgd</p>
+  <div class="site-description" itemprop="description">let's party</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">madgd</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
