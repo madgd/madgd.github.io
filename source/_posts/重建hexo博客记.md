@@ -107,5 +107,14 @@ tags:\
 >branch master 作为默认分支，放生成的博客文件\
 >branch source 用于保存hexo的工作目录原文件
 
+https://hexo.io/zh-cn/docs/github-pages.html
+
+可以通过travis CI 实现站点目录的持续集成。我们只需要保持hexo工作目录在github上更新即可，继续集成将生成站点目录并推送部署
+
+注意通过添加子模块的方式，添加next theme:
+```
+(如果已经git add)git rm --cached themes/next
+git submodule add <url> themes/next
+```
 
 引用参考：
