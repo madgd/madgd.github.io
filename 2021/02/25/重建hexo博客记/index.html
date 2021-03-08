@@ -29,10 +29,10 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://madgd.github.io/2021/02/25/img/oldBlogFileTree.png">
 <meta property="og:image" content="http://madgd.github.io/2021/02/25/img/hexostarter.png">
-<meta property="og:image" content="http://madgd.github.io/img/nextstarter.jpeg">
+<meta property="og:image" content="http://madgd.github.io/2021/02/25/img/nextstarter.jpeg">
 <meta property="og:image" content="http://madgd.github.io/2021/02/25/img/oldpostDateWrong.png">
 <meta property="article:published_time" content="2021-02-25T03:23:07.000Z">
-<meta property="article:modified_time" content="2021-02-26T09:53:50.124Z">
+<meta property="article:modified_time" content="2021-03-08T09:40:46.761Z">
 <meta property="article:author" content="madgd">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://madgd.github.io/2021/02/25/img/oldBlogFileTree.png">
@@ -185,7 +185,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-26 17:53:50" itemprop="dateModified" datetime="2021-02-26T17:53:50+08:00">2021-02-26</time>
+                <time title="Modified: 2021-03-08 17:40:46" itemprop="dateModified" datetime="2021-03-08T17:40:46+08:00">2021-03-08</time>
               </span>
 
           
@@ -231,28 +231,34 @@
 
 <p>编辑<code>_config.yml</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>在此<code>hexo s</code> 即可看到效果<br><img src="/img/nextstarter.jpeg" alt="next"></p>
+<p>在此<code>hexo s</code> 即可看到效果<br><img src="../img/nextstarter.jpeg" alt="next"></p>
 <h1 id="3-恢复原post"><a href="#3-恢复原post" class="headerlink" title="3. 恢复原post"></a>3. 恢复原post</h1><p>将原有post的md移动到<code>_posts</code>文件夹中，发现标题，时间不对：</p>
 <p><img src="../img/oldpostDateWrong.png" alt="date_wrong"></p>
 <p>好解决，在md头部添加信息，即可修复标题、时间：</p>
 <blockquote>
 <p>---<br>title: test<br>date: 2016-05-25 11:18:09<br>tags:<br>---</p>
 </blockquote>
-<p>然后修复图片链接</p>
-<h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><p><strong>至此原博客恢复完成</strong></p>
+<h1 id="4-统一图片链接"><a href="#4-统一图片链接" class="headerlink" title="4. 统一图片链接"></a>4. 统一图片链接</h1><p>在<code>source</code>下建立<code>img</code>目录，将所有图片移入，修改图片链接为相对目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![img](..&#x2F;img&#x2F;win10bule2.jpg)</span><br></pre></td></tr></table></figure>
+
+<p><strong>至此原博客恢复完成</strong></p>
 <hr>
 <h1 id="0x01-若干升级"><a href="#0x01-若干升级" class="headerlink" title="0x01 若干升级"></a>0x01 若干升级</h1><h2 id="0-统一图片路径"><a href="#0-统一图片路径" class="headerlink" title="0. 统一图片路径"></a>0. 统一图片路径</h2><h2 id="1-引入评论模块"><a href="#1-引入评论模块" class="headerlink" title="1. 引入评论模块"></a>1. 引入评论模块</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><hr>
 <h1 id="0x02-部署原代码"><a href="#0x02-部署原代码" class="headerlink" title="0x02 部署原代码"></a>0x02 部署原代码</h1><p>那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？</p>
 <p>最好还是github代码库同步。但如果单独新建代码库，又略显多余。</p>
-<p>一种主流方案是通过<code>branch</code>实现：</p>
+<p>一种主流方案是通过手动双<code>branch</code>实现：</p>
 <blockquote>
 <p>branch master 作为默认分支，放生成的博客文件<br>branch source 用于保存hexo的工作目录原文件</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages.html">https://hexo.io/zh-cn/docs/github-pages.html</a></p>
-<p>可以通过travis CI 实现站点目录的持续集成。我们只需要保持hexo工作目录在github上更新即可，继续集成将生成站点目录并推送部署</p>
-<p>注意通过添加子模块的方式，添加next theme:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(如果已经git add)git rm --cached themes&#x2F;next</span><br><span class="line">git submodule add &lt;url&gt; themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
+<p>参考文档：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment">官方</a><br>这位老哥的比较<a target="_blank" rel="noopener" href="https://www.cnblogs.com/codecheng99/p/12380700.html#%E4%BA%8C%E3%80%81%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A%E9%9D%A2%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8F%8C%E5%88%86%E6%94%AF%E9%83%A8%E7%BD%B2">详细</a></p>
+</blockquote>
+<p>另一种是官网推荐的用<a target="_blank" rel="noopener" href="https://travis-ci.com/">Travis CI</a>持续集成的，我们只需要保持hexo工作目录在github上更新即可，继续集成将生成站点目录并推送部署。（其实也可以双分支）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages.html">持续集成方案</a></p>
+</blockquote>
+<p>错误1：<br>fsevents not accessible from chokidar<br>The command “eval npm ci  “ failed. Retrying, 2 of 3.</p>
 <p>引用参考：</p>
 
     </div>
@@ -331,7 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">0x00 恢复原博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%B0%9D%E8%AF%95%E7%9B%B4%E6%8E%A5github%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">0 尝试直接github同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">1. 安装hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85next-theme"><span class="nav-number">2.</span> <span class="nav-text">2. 安装next theme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%81%A2%E5%A4%8D%E5%8E%9Fpost"><span class="nav-number">3.</span> <span class="nav-text">3. 恢复原post</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-%E8%8B%A5%E5%B9%B2%E5%8D%87%E7%BA%A7"><span class="nav-number">5.</span> <span class="nav-text">0x01 若干升级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-number">5.1.</span> <span class="nav-text">0. 统一图片路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E5%85%A5%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97"><span class="nav-number">5.2.</span> <span class="nav-text">1. 引入评论模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">5.3.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-%E9%83%A8%E7%BD%B2%E5%8E%9F%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">0x02 部署原代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">0x00 恢复原博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%B0%9D%E8%AF%95%E7%9B%B4%E6%8E%A5github%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">0 尝试直接github同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">1. 安装hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85next-theme"><span class="nav-number">2.</span> <span class="nav-text">2. 安装next theme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%81%A2%E5%A4%8D%E5%8E%9Fpost"><span class="nav-number">3.</span> <span class="nav-text">3. 恢复原post</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">4. 统一图片链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-%E8%8B%A5%E5%B9%B2%E5%8D%87%E7%BA%A7"><span class="nav-number">5.</span> <span class="nav-text">0x01 若干升级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-number">5.1.</span> <span class="nav-text">0. 统一图片路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E5%85%A5%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97"><span class="nav-number">5.2.</span> <span class="nav-text">1. 引入评论模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">5.3.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-%E9%83%A8%E7%BD%B2%E5%8E%9F%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">0x02 部署原代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
