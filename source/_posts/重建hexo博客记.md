@@ -70,7 +70,7 @@ git clone https://github.com/theme-next/hexo-theme-next themes/next
 theme: next
 ```
 在此`hexo s` 即可看到效果
-![next](/img/nextstarter.jpeg)
+![next](../img/nextstarter.jpeg)
 # 3. 恢复原post
 将原有post的md移动到`_posts`文件夹中，发现标题，时间不对：
 
@@ -83,9 +83,12 @@ date: 2016-05-25 11:18:09\
 tags:\
 \-\-\-
 
-然后修复图片链接
+# 4. 统一图片链接
+在`source`下建立`img`目录，将所有图片移入，修改图片链接为相对目录：
+```
+![img](../img/win10bule2.jpg)
+```
 
-# 4. 
 **至此原博客恢复完成**
 
 ***
@@ -103,18 +106,22 @@ tags:\
 
 最好还是github代码库同步。但如果单独新建代码库，又略显多余。
 
-一种主流方案是通过`branch`实现：
+一种主流方案是通过手动双`branch`实现：
 >branch master 作为默认分支，放生成的博客文件\
 >branch source 用于保存hexo的工作目录原文件
 
-https://hexo.io/zh-cn/docs/github-pages.html
+参考文档：
+>[官方](https://hexo.io/zh-cn/docs/one-command-deployment)\
+这位老哥的比较[详细](https://www.cnblogs.com/codecheng99/p/12380700.html#%E4%BA%8C%E3%80%81%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A%E9%9D%A2%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%8F%8C%E5%88%86%E6%94%AF%E9%83%A8%E7%BD%B2)
 
-可以通过travis CI 实现站点目录的持续集成。我们只需要保持hexo工作目录在github上更新即可，继续集成将生成站点目录并推送部署
+另一种是官网推荐的用[Travis CI](https://travis-ci.com/)持续集成的，我们只需要保持hexo工作目录在github上更新即可，继续集成将生成站点目录并推送部署。（其实也可以双分支）
+>[持续集成方案](https://hexo.io/zh-cn/docs/github-pages.html)
 
-注意通过添加子模块的方式，添加next theme:
-```
-(如果已经git add)git rm --cached themes/next
-git submodule add <url> themes/next
-```
+
+
+错误1：
+fsevents not accessible from chokidar
+The command "eval npm ci  " failed. Retrying, 2 of 3.
+
 
 引用参考：
