@@ -178,7 +178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-08 17:40:46" itemprop="dateModified" datetime="2021-03-08T17:40:46+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
               </span>
 
           
@@ -197,7 +197,7 @@
 <pre><code>git clone git@github.com:madgd/madgd.github.io.git
 </code></pre>
 <p>打开目录一看，发觉有点不太对。为什么只有html，没有md文件呢？？</p>
-<p><img src="../img/oldBlogFileTree.png" alt="filetree"></p>
+<p><img src="/img/oldBlogFileTree.png" alt="filetree"></p>
 <p>通过检索相关文档，才想起来md等数据是存在原始的hexo的工作目录中的，实际部署的博客目录是生成的<code>public</code>文件夹的结果。果断翻出旧硬盘找原始文件。但是只找到了若干md，并没用工作目录。<br>看来当年还是<code>too young</code>。</p>
 <p>只能重新搭建hexo的工作目录，在把原来的md更新进去了。</p>
 <h2 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1. 安装hexo"></a>1. 安装hexo</h2><p>互联网上hexo的安装攻略一大把，随便搜一下照着来就行。</p>
@@ -208,7 +208,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog &amp;&amp; npm install</span><br></pre></td></tr></table></figure>
 <p>安装完成后验证：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">(hexo server)</span><br></pre></td></tr></table></figure>
-<p>执行成功后访问<code>http://localhost:4000</code>可验证<br><img src="../img/hexostarter.png" alt="starter"></p>
+<p>执行成功后访问<code>http://localhost:4000</code>可验证<br><img src="/img/hexostarter.png" alt="starter"></p>
 <p>hints:</p>
 <ol>
 <li>npm速度慢——<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/63acb38962c6">切换淘宝源</a></li>
@@ -224,15 +224,15 @@
 
 <p>编辑<code>_config.yml</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>在此<code>hexo s</code> 即可看到效果<br><img src="../img/nextstarter.jpeg" alt="next"></p>
+<p>在此<code>hexo s</code> 即可看到效果<br><img src="/img/nextstarter.jpeg" alt="next"></p>
 <h1 id="3-恢复原post"><a href="#3-恢复原post" class="headerlink" title="3. 恢复原post"></a>3. 恢复原post</h1><p>将原有post的md移动到<code>_posts</code>文件夹中，发现标题，时间不对：</p>
-<p><img src="../img/oldpostDateWrong.png" alt="date_wrong"></p>
+<p><img src="/img/oldpostDateWrong.png" alt="date_wrong"></p>
 <p>好解决，在md头部添加信息，即可修复标题、时间：</p>
 <blockquote>
 <p>---<br>title: test<br>date: 2016-05-25 11:18:09<br>tags:<br>---</p>
 </blockquote>
 <h1 id="4-统一图片链接"><a href="#4-统一图片链接" class="headerlink" title="4. 统一图片链接"></a>4. 统一图片链接</h1><p>在<code>source</code>下建立<code>img</code>目录，将所有图片移入，修改图片链接为相对目录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![img](..&#x2F;img&#x2F;win10bule2.jpg)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![img](&#x2F;img&#x2F;win10bule2.jpg)</span><br></pre></td></tr></table></figure>
 
 <p><strong>至此原博客恢复完成</strong></p>
 <hr>
@@ -303,7 +303,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-08 17:40:46" itemprop="dateModified" datetime="2021-03-08T17:40:46+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
               </span>
 
           
@@ -387,7 +387,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-08 17:40:46" itemprop="dateModified" datetime="2021-03-08T17:40:46+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
               </span>
 
           
@@ -402,7 +402,7 @@
 
       
           <p>这是一个悲伤的故事</p>
-<h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p><img src="../img/win10bule1.jpg" alt="pic1"></p>
+<h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p><img src="/img/win10bule1.jpg" alt="pic1"></p>
 <blockquote>
 <p><strong>症状分析</strong>：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**<em>critical_structure_corruption**</em></p>
 </blockquote>
@@ -450,8 +450,8 @@
 <blockquote>
 <p>系统–高级系统设置–高级–启动和故障恢复–写人调试信息(选择小内存转储)</p>
 </blockquote>
-<p><img src="../img/win10bule2.jpg" alt="pic2"></p>
-<p><img src="../img/win10bule3.jpg" alt="pic3"></p>
+<p><img src="/img/win10bule2.jpg" alt="pic2"></p>
+<p><img src="/img/win10bule3.jpg" alt="pic3"></p>
 </li>
 <li><p>分析dump文件</p>
 <p>　<strong>分析方法参考<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/8275fc868d277e46a03cf6d4.html">分析dump文件</a></strong></p>
@@ -549,7 +549,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-08 17:40:46" itemprop="dateModified" datetime="2021-03-08T17:40:46+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
               </span>
 
           
@@ -764,7 +764,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-08 17:40:46" itemprop="dateModified" datetime="2021-03-08T17:40:46+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
               </span>
 
           
