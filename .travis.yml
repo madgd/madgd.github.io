@@ -7,7 +7,7 @@ branches:
   only:
     - master # build master branch only
 script:
-  - sed '1,$s/](\.\.\/img/](\/img/g' source/_posts/*.md
+  - sed -i '1,$s/](\.\.\/img/](\/img/g' source/_posts/*.md
   - hexo cl
   - hexo generate # generate static files
 deploy:
