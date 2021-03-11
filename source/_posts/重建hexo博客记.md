@@ -269,9 +269,11 @@ author
 ```
 
 可参考[next使用](http://theme-next.iissnan.com/getting-started.html)
-## 1. 开启百度统计
+## 1. 开启百度统计&添加阅读量统计
 
 参考[next使用](http://theme-next.iissnan.com/getting-started.html)相关章节
+
+参考[添加文章阅读量统计](https://cloud.tencent.com/developer/article/1482008)
 
 ## 2. 引入评论模块
 ***
