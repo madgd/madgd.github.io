@@ -83,25 +83,23 @@ date: 2016-05-25 11:18:09\
 tags:\
 \-\-\-
 
-# 4. 统一图片链接
+# 4. 统一图片路径
 在`source`下建立`img`目录，将所有图片移入，修改图片链接为相对目录：
 ```
 ![img](../img/win10bule2.jpg)
 ```
 
-**至此原博客恢复完成**
+**至此原博客工作目录恢复完成，可以开始编辑新的博文了**
+
+如何部署后文再讲
 
 ***
 
-# 0x01 若干升级
-## 0. 统一图片路径
+# 0x01 部署
 
-## 1. 引入评论模块
+官方介绍了多种[一键部署方案](https://hexo.io/zh-cn/docs/one-command-deployment.html), 这里我们使用github pages
 
-## 2. 
-***
-
-# 0x02 部署原代码
+# 0. 保留原代码
 那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？
 
 最好还是github代码库同步。但如果单独新建代码库，又略显多余。
@@ -118,10 +116,162 @@ tags:\
 >[持续集成方案](https://hexo.io/zh-cn/docs/github-pages.html)
 
 
+## 1. 采坑解决
+### 1.1 部署报错
 
-错误1：
+在按照[持续集成方案](https://hexo.io/zh-cn/docs/github-pages.html)部署时，
+
+```
 fsevents not accessible from chokidar
 The command "eval npm ci  " failed. Retrying, 2 of 3.
+```
+
+检索该错误，未找到相关信息。检查travis 与本地环境diff，发现node版本不同：
+```
+node_js:
+  - 10 # 官方文档版本
+本地：
+$ node -v
+v15.3.0
+```
+修改版本一致: `- 15`
+
+并添加`deploy`目录：
+```
+deploy:
+  ...
+  target: gh-page
+```
+### 1.2 修复图片路径错误
+
+通过相对路径法生成的博客图片，在博客首页显示正常，但在博文详情页，缺发生了链接错误的情况。是相对路径导致。已有的主流解决方法参考：
+>[hexo博客中插入图片失败——解决思路及个人最终解决办法](https://blog.csdn.net/m0_43401436/article/details/107191688)\
+>[Hexo 中完美插入本地图片](https://andavid.github.io/2019/01/15/insert-local-image-in-hexo/)
+
+几种方法或者需要舍弃md在本地图片的显示，或者需要为每篇博文单独建立目录，不利于图片的复用。
+
+这里尝试一种新的思路：
+>本地使用相对路径，支持md；再部署时批量去掉路径前的`..`，变成网站绝对目录
+
+这样在本地编辑时，使用相对目录，可正常预览md：
+```
+![img](../img/win10bule2.jpg)
+```
+完成md编辑后，直接push到在github的master分支hexo工作目录，md也可以正常预览。
+
+修改部署脚本`.travis.yml`, 在`hexo g`生成前，使用`sed` 正则匹配所有_post中的md文件, 原地批量替换：
+```
+sed -i '1,$s/](\.\.\/img/](\/img/g' source/_posts/*.md
+
+```
+
+>在mac上测试的时候会有一点问题，使用`-i`参数的时候会报错，可以试用`gsed`，参考：[mac sed -i 报错](https://www.whidy.net/macos-sed-command-notice)
+
+## 2. 方案总结
+
+总体步骤基本按照官方，需要修改`.travis.yml`. 以下为了方便看，直接复制过来：
+
+1. 新建一个 repository。如果你希望你的站点能通过 `<你的 GitHub 用户名>.github.io` 域名访问，你的 repository 应该直接命名为 `<你的 GitHub 用户名>.github.io`， 如：
+```
+madgd/madgd.github.io
+```
+2. 将你的 Hexo 站点文件夹推送到 repository 中。默认情况下不应该`public` 目录将不会被推送到 repository 中，你应该检查 `.gitignore` 文件中是否包含 `public` 一行，如果没有请加上。
+```
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+```
+3. 将 [Travis CI](https://github.com/marketplace/travis-ci) 添加到你的 GitHub 账户中。
+![travisConf](../img/travisConf.png)
+4. 前往 GitHub 的 [Applications settings](https://github.com/settings/installations)，配置 Travis CI 权限，使其能够访问你的 repository。
+![travisConf2](../img/travisConf2.png)
+5. 你应该会被重定向到 Travis CI 的页面。如果没有，请 [手动前往](https://travis-ci.com/)。
+6. 在浏览器新建一个标签页，前往 GitHub [新建 Personal Access Token](https://github.com/settings/tokens)，只勾选 repo 的权限并生成一个新的 Token。Token 生成后请复制并保存好。
+![](../img/githubPk4travis.png)
+7. 回到 Travis CI，前往你的 repository 的设置页面，在 Environment Variables 下新建一个环境变量，Name 为 GH_TOKEN，Value 为刚才你在 GitHub 生成的 Token。确保 DISPLAY VALUE IN BUILD LOG 保持 不被勾选 避免你的 Token 泄漏。点击 Add 保存。
+8. 在你的 Hexo 站点文件夹中新建一个 .travis.yml 文件, 经修改最终生成的`.travis.yml`文件：
+```
+sudo: false
+language: node_js
+node_js:
+  - 15 # use nodejs v15 LTS
+cache: npm
+branches:
+  only:
+    - master # build master branch only
+script:
+  - sed -i '1,$s/](\.\.\/img/](\/img/g' source/_posts/*.md
+  - hexo cl
+  - hexo generate # generate static files
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: master
+  local-dir: public
+  target: gh-pages
+```
+9. 将`.travis.yml` 推送到 repository 中。Travis CI 应该会自动开始运行，并将生成的文件推送到同一 repository 下的`gh-pages` 分支下
+10. 在 GitHub 中前往你的 repository 的设置页面，修改 `GitHub Pages` 的部署分支为 `gh-pages`。
+11. 前往 `https://<你的 GitHub 用户名>.github.io` 查看你的站点是否可以访问。可能需要稍等一会儿。
 
 
-引用参考：
+**这样，每次更新博客的操作就是：**
+
+1. hexo new "title"
+2. 编辑md
+3. 图片存在`source/img/` 目录下，md中使用相对路径`../img/pic`引入图片，本地可正常预览
+4. 写完后
+```
+git add .
+git commit -m "comment"
+git push
+```
+5. 剩下的工作会由`travis`持续集成完成
+![travisComplete](../img/travisComplete.png)
+
+***
+# 0x02 装修
+## 0. 个性化设置
+编辑`.config.yml`:
+```
+title: madgd's blog
+subtitle: ''
+description: let's party
+keywords:
+author: madgd
+language: zh
+timezone: 'Asia/Shanghai'
+
+```
+
+编辑`themes/next/_config.yml`:
+```
+scheme: Gemini
+
+# Dark Mode
+darkmode: true
+
+language: zh-cn
+
+position: right
+# 头像
+avatar:
+  url: /img/avatar.png
+
+author
+```
+
+可参考[next使用](http://theme-next.iissnan.com/getting-started.html)
+## 1. 开启百度统计
+
+参考[next使用](http://theme-next.iissnan.com/getting-started.html)相关章节
+
+## 2. 引入评论模块
+***
