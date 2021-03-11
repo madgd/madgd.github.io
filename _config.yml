@@ -103,3 +103,12 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+
+# leancloud_counter_security:
+#   enable_sync: true
+#   app_id: <your app id>
+#   app_key: <your app key>
+#   server_url: <your server url> # Required for apps from CN region, e.g. https://leancloud.cn
+#   username: <your username> # Will be asked while deploying if is left blank
+#   password: <your password> # Recommmended to be left blank. Will be asked while deploying if is left blank

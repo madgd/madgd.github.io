@@ -275,5 +275,17 @@ author
 
 参考[添加文章阅读量统计](https://cloud.tencent.com/developer/article/1482008)
 
+注意，按以上步骤配置后并不会立即生效，会提示：
+```
+Views: Counter not initialized! More info at console err msg.
+```
+查看console:
+```
+ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. 
+ However, you can still use LeanCloud without security, by setting `security` option to `false`.
+```
+
+按照[hexo-leancloud-counter-security](https://github.com/theme-next/hexo-leancloud-counter-security) 安装并配置
+
 ## 2. 引入评论模块
 ***
