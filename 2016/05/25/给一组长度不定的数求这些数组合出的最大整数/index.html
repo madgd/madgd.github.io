@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="0x00 问题一个题目:  给一组长短不一的数字，求这组数字前后链接能组成的最大整数。如87 879 8787组成最大整数为8798787  0x01 思路解题思路：    类比排序，按一定的比较方法比较大小，最大的在最前面，依次排列就可以组成最大整数。  那么这里的关键是两个输入数字的比较函数的定义。定义如下：   逐位比较两个输入数字，出现更大的数字者返回较大 如果两个输入数字中较短数字是另一">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="0x00 问题一个题目:  给一组长短不一的数字，求这组数字前后链接能组成的最大整数。如87 879 8787组成最大整数为8798787  0x01 思路解题思路：    类比排序，按一定的比较方法比较大小，最大的在最前面，依次排列就可以组成最大整数。  那么这里的关键是两个输入数字的比较函数的定义。定义如下：   逐位比较两个输入数字，出现更大的数字者返回较大 如果两个输入数字中较短数字是另一">
 <meta property="og:locale">
 <meta property="article:published_time" content="2016-05-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-09T08:52:37.549Z">
+<meta property="article:modified_time" content="2021-03-11T09:43:09.973Z">
 <meta property="article:author" content="madgd">
 <meta name="twitter:card" content="summary">
 
@@ -49,6 +49,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?041a76dbeb4e267935f9211521f4a6f0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -117,9 +126,39 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
 
   </li>
   </ul>
@@ -153,7 +192,7 @@
     <link itemprop="mainEntityOfPage" href="http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/img/avatar.png">
       <meta itemprop="name" content="madgd">
       <meta itemprop="description" content="let's party">
     </span>
@@ -180,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
+                <time title="Modified: 2021-03-11 17:43:09" itemprop="dateModified" datetime="2021-03-11T17:43:09+08:00">2021-03-11</time>
               </span>
 
           
@@ -300,6 +339,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="madgd"
+      src="/img/avatar.png">
   <p class="site-author-name" itemprop="name">madgd</p>
   <div class="site-description" itemprop="description">let's party</div>
 </div>
@@ -342,7 +383,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">madgd</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -368,7 +409,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>

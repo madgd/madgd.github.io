@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！ 0x00 恢复原博客0 尝试直接github同步太久没弄了">
@@ -31,8 +31,12 @@
 <meta property="og:image" content="http://madgd.github.io/img/hexostarter.png">
 <meta property="og:image" content="http://madgd.github.io/img/nextstarter.jpeg">
 <meta property="og:image" content="http://madgd.github.io/img/oldpostDateWrong.png">
+<meta property="og:image" content="http://madgd.github.io/img/travisConf.png">
+<meta property="og:image" content="http://madgd.github.io/img/travisConf2.png">
+<meta property="og:image" content="http://madgd.github.io/img/githubPk4travis.png">
+<meta property="og:image" content="http://madgd.github.io/img/travisComplete.png">
 <meta property="article:published_time" content="2021-02-25T03:23:07.000Z">
-<meta property="article:modified_time" content="2021-03-09T08:52:37.549Z">
+<meta property="article:modified_time" content="2021-03-11T09:43:09.977Z">
 <meta property="article:author" content="madgd">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://madgd.github.io/img/oldBlogFileTree.png">
@@ -54,6 +58,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?041a76dbeb4e267935f9211521f4a6f0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -122,9 +135,39 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
 
   </li>
   </ul>
@@ -158,7 +201,7 @@
     <link itemprop="mainEntityOfPage" href="http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/img/avatar.png">
       <meta itemprop="name" content="madgd">
       <meta itemprop="description" content="let's party">
     </span>
@@ -185,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-09 16:52:37" itemprop="dateModified" datetime="2021-03-09T16:52:37+08:00">2021-03-09</time>
+                <time title="Modified: 2021-03-11 17:43:09" itemprop="dateModified" datetime="2021-03-11T17:43:09+08:00">2021-03-11</time>
               </span>
 
           
@@ -238,13 +281,14 @@
 <blockquote>
 <p>---<br>title: test<br>date: 2016-05-25 11:18:09<br>tags:<br>---</p>
 </blockquote>
-<h1 id="4-统一图片链接"><a href="#4-统一图片链接" class="headerlink" title="4. 统一图片链接"></a>4. 统一图片链接</h1><p>在<code>source</code>下建立<code>img</code>目录，将所有图片移入，修改图片链接为相对目录：</p>
+<h1 id="4-统一图片路径"><a href="#4-统一图片路径" class="headerlink" title="4. 统一图片路径"></a>4. 统一图片路径</h1><p>在<code>source</code>下建立<code>img</code>目录，将所有图片移入，修改图片链接为相对目录：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![img](&#x2F;img&#x2F;win10bule2.jpg)</span><br></pre></td></tr></table></figure>
 
-<p><strong>至此原博客恢复完成</strong></p>
+<p><strong>至此原博客工作目录恢复完成，可以开始编辑新的博文了</strong></p>
+<p>如何部署后文再讲</p>
 <hr>
-<h1 id="0x01-若干升级"><a href="#0x01-若干升级" class="headerlink" title="0x01 若干升级"></a>0x01 若干升级</h1><h2 id="0-统一图片路径"><a href="#0-统一图片路径" class="headerlink" title="0. 统一图片路径"></a>0. 统一图片路径</h2><h2 id="1-引入评论模块"><a href="#1-引入评论模块" class="headerlink" title="1. 引入评论模块"></a>1. 引入评论模块</h2><h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><hr>
-<h1 id="0x02-部署原代码"><a href="#0x02-部署原代码" class="headerlink" title="0x02 部署原代码"></a>0x02 部署原代码</h1><p>那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？</p>
+<h1 id="0x01-部署"><a href="#0x01-部署" class="headerlink" title="0x01 部署"></a>0x01 部署</h1><p>官方介绍了多种<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment.html">一键部署方案</a>, 这里我们使用github pages</p>
+<h1 id="0-保留原代码"><a href="#0-保留原代码" class="headerlink" title="0. 保留原代码"></a>0. 保留原代码</h1><p>那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？</p>
 <p>最好还是github代码库同步。但如果单独新建代码库，又略显多余。</p>
 <p>一种主流方案是通过手动双<code>branch</code>实现：</p>
 <blockquote>
@@ -258,8 +302,64 @@
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages.html">持续集成方案</a></p>
 </blockquote>
-<p>错误1：<br>fsevents not accessible from chokidar<br>The command “eval npm ci  “ failed. Retrying, 2 of 3.</p>
-<p>引用参考：</p>
+<h2 id="1-采坑解决"><a href="#1-采坑解决" class="headerlink" title="1. 采坑解决"></a>1. 采坑解决</h2><h3 id="1-1-部署报错"><a href="#1-1-部署报错" class="headerlink" title="1.1 部署报错"></a>1.1 部署报错</h3><p>在按照<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages.html">持续集成方案</a>部署时，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fsevents not accessible from chokidar</span><br><span class="line">The command &quot;eval npm ci  &quot; failed. Retrying, 2 of 3.</span><br></pre></td></tr></table></figure>
+
+<p>检索该错误，未找到相关信息。检查travis 与本地环境diff，发现node版本不同：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node_js:</span><br><span class="line">  - 10 # 官方文档版本</span><br><span class="line">本地：</span><br><span class="line">$ node -v</span><br><span class="line">v15.3.0</span><br></pre></td></tr></table></figure>
+<p>修改版本一致: <code>- 15</code></p>
+<p>并添加<code>deploy</code>目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  ...</span><br><span class="line">  target: gh-page</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-修复图片路径错误"><a href="#1-2-修复图片路径错误" class="headerlink" title="1.2 修复图片路径错误"></a>1.2 修复图片路径错误</h3><p>通过相对路径法生成的博客图片，在博客首页显示正常，但在博文详情页，缺发生了链接错误的情况。是相对路径导致。已有的主流解决方法参考：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法</a><br><a target="_blank" rel="noopener" href="https://andavid.github.io/2019/01/15/insert-local-image-in-hexo/">Hexo 中完美插入本地图片</a></p>
+</blockquote>
+<p>几种方法或者需要舍弃md在本地图片的显示，或者需要为每篇博文单独建立目录，不利于图片的复用。</p>
+<p>这里尝试一种新的思路：</p>
+<blockquote>
+<p>本地使用相对路径，支持md；再部署时批量去掉路径前的<code>..</code>，变成网站绝对目录</p>
+</blockquote>
+<p>这样在本地编辑时，使用相对目录，可正常预览md：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![img](&#x2F;img&#x2F;win10bule2.jpg)</span><br></pre></td></tr></table></figure>
+<p>完成md编辑后，直接push到在github的master分支hexo工作目录，md也可以正常预览。</p>
+<p>修改部署脚本<code>.travis.yml</code>, 在<code>hexo g</code>生成前，使用<code>sed</code> 正则匹配所有_post中的md文件, 原地批量替换：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;1,$s&#x2F;](\.\.\&#x2F;img&#x2F;](\&#x2F;img&#x2F;g&#39; source&#x2F;_posts&#x2F;*.md</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在mac上测试的时候会有一点问题，使用<code>-i</code>参数的时候会报错，可以试用<code>gsed</code>，参考：<a target="_blank" rel="noopener" href="https://www.whidy.net/macos-sed-command-notice">mac sed -i 报错</a></p>
+</blockquote>
+<h2 id="2-方案总结"><a href="#2-方案总结" class="headerlink" title="2. 方案总结"></a>2. 方案总结</h2><p>总体步骤基本按照官方，需要修改<code>.travis.yml</code>. 以下为了方便看，直接复制过来：</p>
+<ol>
+<li>新建一个 repository。如果你希望你的站点能通过 <code>&lt;你的 GitHub 用户名&gt;.github.io</code> 域名访问，你的 repository 应该直接命名为 <code>&lt;你的 GitHub 用户名&gt;.github.io</code>， 如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">madgd&#x2F;madgd.github.io</span><br></pre></td></tr></table></figure></li>
+<li>将你的 Hexo 站点文件夹推送到 repository 中。默认情况下不应该<code>public</code> 目录将不会被推送到 repository 中，你应该检查 <code>.gitignore</code> 文件中是否包含 <code>public</code> 一行，如果没有请加上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules&#x2F;</span><br><span class="line">public&#x2F;</span><br><span class="line">.deploy*&#x2F;</span><br></pre></td></tr></table></figure></li>
+<li>将 <a target="_blank" rel="noopener" href="https://github.com/marketplace/travis-ci">Travis CI</a> 添加到你的 GitHub 账户中。<br><img src="/img/travisConf.png" alt="travisConf"></li>
+<li>前往 GitHub 的 <a target="_blank" rel="noopener" href="https://github.com/settings/installations">Applications settings</a>，配置 Travis CI 权限，使其能够访问你的 repository。<br><img src="/img/travisConf2.png" alt="travisConf2"></li>
+<li>你应该会被重定向到 Travis CI 的页面。如果没有，请 <a target="_blank" rel="noopener" href="https://travis-ci.com/">手动前往</a>。</li>
+<li>在浏览器新建一个标签页，前往 GitHub <a target="_blank" rel="noopener" href="https://github.com/settings/tokens">新建 Personal Access Token</a>，只勾选 repo 的权限并生成一个新的 Token。Token 生成后请复制并保存好。<br><img src="/img/githubPk4travis.png"></li>
+<li>回到 Travis CI，前往你的 repository 的设置页面，在 Environment Variables 下新建一个环境变量，Name 为 GH_TOKEN，Value 为刚才你在 GitHub 生成的 Token。确保 DISPLAY VALUE IN BUILD LOG 保持 不被勾选 避免你的 Token 泄漏。点击 Add 保存。</li>
+<li>在你的 Hexo 站点文件夹中新建一个 .travis.yml 文件, 经修改最终生成的<code>.travis.yml</code>文件：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sudo: false</span><br><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">  - 15 # use nodejs v15 LTS</span><br><span class="line">cache: npm</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - master # build master branch only</span><br><span class="line">script:</span><br><span class="line">  - sed -i &#39;1,$s&#x2F;](\.\.\&#x2F;img&#x2F;](\&#x2F;img&#x2F;g&#39; source&#x2F;_posts&#x2F;*.md</span><br><span class="line">  - hexo cl</span><br><span class="line">  - hexo generate # generate static files</span><br><span class="line">deploy:</span><br><span class="line">  provider: pages</span><br><span class="line">  skip-cleanup: true</span><br><span class="line">  github-token: $GH_TOKEN</span><br><span class="line">  keep-history: true</span><br><span class="line">  on:</span><br><span class="line">    branch: master</span><br><span class="line">  local-dir: public</span><br><span class="line">  target: gh-pages</span><br></pre></td></tr></table></figure></li>
+<li>将<code>.travis.yml</code> 推送到 repository 中。Travis CI 应该会自动开始运行，并将生成的文件推送到同一 repository 下的<code>gh-pages</code> 分支下</li>
+<li>在 GitHub 中前往你的 repository 的设置页面，修改 <code>GitHub Pages</code> 的部署分支为 <code>gh-pages</code>。</li>
+<li>前往 <code>https://&lt;你的 GitHub 用户名&gt;.github.io</code> 查看你的站点是否可以访问。可能需要稍等一会儿。</li>
+</ol>
+<p><strong>这样，每次更新博客的操作就是：</strong></p>
+<ol>
+<li>hexo new “title”</li>
+<li>编辑md</li>
+<li>图片存在<code>source/img/</code> 目录下，md中使用相对路径<code>../img/pic</code>引入图片，本地可正常预览</li>
+<li>写完后<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;comment&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
+<li>剩下的工作会由<code>travis</code>持续集成完成<br><img src="/img/travisComplete.png" alt="travisComplete"></li>
+</ol>
+<hr>
+<h1 id="0x02-装修"><a href="#0x02-装修" class="headerlink" title="0x02 装修"></a>0x02 装修</h1><h2 id="0-个性化设置"><a href="#0-个性化设置" class="headerlink" title="0. 个性化设置"></a>0. 个性化设置</h2><p>编辑<code>.config.yml</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: madgd&#39;s blog</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: let&#39;s party</span><br><span class="line">keywords:</span><br><span class="line">author: madgd</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#39;Asia&#x2F;Shanghai&#39;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>themes/next/_config.yml</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">scheme: Gemini</span><br><span class="line"></span><br><span class="line"># Dark Mode</span><br><span class="line">darkmode: true</span><br><span class="line"></span><br><span class="line">language: zh-cn</span><br><span class="line"></span><br><span class="line">position: right</span><br><span class="line"># 头像</span><br><span class="line">avatar:</span><br><span class="line">  url: &#x2F;img&#x2F;avatar.png</span><br><span class="line"></span><br><span class="line">author</span><br></pre></td></tr></table></figure>
+
+<p>可参考<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">next使用</a></p>
+<h2 id="1-开启百度统计"><a href="#1-开启百度统计" class="headerlink" title="1. 开启百度统计"></a>1. 开启百度统计</h2><p>参考<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">next使用</a>相关章节</p>
+<h2 id="2-引入评论模块"><a href="#2-引入评论模块" class="headerlink" title="2. 引入评论模块"></a>2. 引入评论模块</h2><hr>
 
     </div>
 
@@ -337,12 +437,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">0x00 恢复原博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%B0%9D%E8%AF%95%E7%9B%B4%E6%8E%A5github%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">0 尝试直接github同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">1. 安装hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85next-theme"><span class="nav-number">2.</span> <span class="nav-text">2. 安装next theme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%81%A2%E5%A4%8D%E5%8E%9Fpost"><span class="nav-number">3.</span> <span class="nav-text">3. 恢复原post</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">4. 统一图片链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-%E8%8B%A5%E5%B9%B2%E5%8D%87%E7%BA%A7"><span class="nav-number">5.</span> <span class="nav-text">0x01 若干升级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-number">5.1.</span> <span class="nav-text">0. 统一图片路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E5%85%A5%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97"><span class="nav-number">5.2.</span> <span class="nav-text">1. 引入评论模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">5.3.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-%E9%83%A8%E7%BD%B2%E5%8E%9F%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">0x02 部署原代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">0x00 恢复原博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%B0%9D%E8%AF%95%E7%9B%B4%E6%8E%A5github%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">0 尝试直接github同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">1. 安装hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85next-theme"><span class="nav-number">2.</span> <span class="nav-text">2. 安装next theme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%81%A2%E5%A4%8D%E5%8E%9Fpost"><span class="nav-number">3.</span> <span class="nav-text">3. 恢复原post</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text">4. 统一图片路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-%E9%83%A8%E7%BD%B2"><span class="nav-number">5.</span> <span class="nav-text">0x01 部署</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E4%BF%9D%E7%95%99%E5%8E%9F%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">0. 保留原代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%87%87%E5%9D%91%E8%A7%A3%E5%86%B3"><span class="nav-number">6.1.</span> <span class="nav-text">1. 采坑解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99"><span class="nav-number">6.1.1.</span> <span class="nav-text">1.1 部署报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BF%AE%E5%A4%8D%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%94%99%E8%AF%AF"><span class="nav-number">6.1.2.</span> <span class="nav-text">1.2 修复图片路径错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93"><span class="nav-number">6.2.</span> <span class="nav-text">2. 方案总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-%E8%A3%85%E4%BF%AE"><span class="nav-number">7.</span> <span class="nav-text">0x02 装修</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.1.</span> <span class="nav-text">0. 个性化设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%80%E5%90%AF%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1"><span class="nav-number">7.2.</span> <span class="nav-text">1. 开启百度统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%95%E5%85%A5%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97"><span class="nav-number">7.3.</span> <span class="nav-text">2. 引入评论模块</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="madgd"
+      src="/img/avatar.png">
   <p class="site-author-name" itemprop="name">madgd</p>
   <div class="site-description" itemprop="description">let's party</div>
 </div>
@@ -385,7 +487,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">madgd</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
         
@@ -411,7 +513,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
