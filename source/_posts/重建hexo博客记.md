@@ -306,6 +306,11 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 
 参考这位老哥的方案[Hexo博客进阶：为Next主题添加Valine评论系统](https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/)
 
+![](../img/valine.png)
+
+同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
+](https://zhuanlan.zhihu.com/p/33617273)
+
 ## 2. 引入搜索服务
 
 ***
