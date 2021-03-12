@@ -531,6 +531,7 @@
   
 
 
+
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
@@ -552,7 +553,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       visitor    : false,
       lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
-      recordIP   : false,
+      recordIP   : true,
       serverURLs : ''
     });
   }, window.Valine);

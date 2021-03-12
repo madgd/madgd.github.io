@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-12 11:01:59" itemprop="dateModified" datetime="2021-03-12T11:01:59+08:00">2021-03-12</time>
+                <time title="Modified: 2021-03-12 15:04:43" itemprop="dateModified" datetime="2021-03-12T15:04:43+08:00">2021-03-12</time>
               </span>
 
           
@@ -384,6 +384,9 @@
 <h2 id="2-引入评论"><a href="#2-引入评论" class="headerlink" title="2. 引入评论"></a>2. 引入评论</h2><p>常用评论模块有：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/267598518">next评论系统</a></p>
 <p>其中disqus需要翻墙，github类的gitment、gitalk、gitter需要github账号，valine无后端，对用户门槛最低。因此优先接入valine。</p>
 <p>参考这位老哥的方案<a target="_blank" rel="noopener" href="https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Hexo博客进阶：为Next主题添加Valine评论系统</a></p>
+<p><img src="/img/valine.png"></p>
+<p>同时，为了支持带图片评论，接入<a target="_blank" rel="noopener" href="https://livere.com/">来必力</a>, 方案参考这位老哥的<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33617273">Hexo博客优化之实现来必力评论功能
+</a></p>
 <h2 id="2-引入搜索服务"><a href="#2-引入搜索服务" class="headerlink" title="2. 引入搜索服务"></a>2. 引入搜索服务</h2><hr>
 
       
@@ -435,7 +438,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-12 11:01:59" itemprop="dateModified" datetime="2021-03-12T11:01:59+08:00">2021-03-12</time>
+                <time title="Modified: 2021-03-12 15:04:43" itemprop="dateModified" datetime="2021-03-12T15:04:43+08:00">2021-03-12</time>
               </span>
 
           
@@ -540,7 +543,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-12 11:01:59" itemprop="dateModified" datetime="2021-03-12T11:01:59+08:00">2021-03-12</time>
+                <time title="Modified: 2021-03-12 15:04:43" itemprop="dateModified" datetime="2021-03-12T15:04:43+08:00">2021-03-12</time>
               </span>
 
           
@@ -723,7 +726,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-12 11:01:59" itemprop="dateModified" datetime="2021-03-12T11:01:59+08:00">2021-03-12</time>
+                <time title="Modified: 2021-03-12 15:04:43" itemprop="dateModified" datetime="2021-03-12T15:04:43+08:00">2021-03-12</time>
               </span>
 
           
@@ -959,7 +962,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-12 11:01:59" itemprop="dateModified" datetime="2021-03-12T11:01:59+08:00">2021-03-12</time>
+                <time title="Modified: 2021-03-12 15:04:43" itemprop="dateModified" datetime="2021-03-12T15:04:43+08:00">2021-03-12</time>
               </span>
 
           
@@ -1270,6 +1273,7 @@
   
 
 
+
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
@@ -1291,7 +1295,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       visitor    : false,
       lang       : 'zh-cn' || 'zh-cn',
       path       : location.pathname,
-      recordIP   : false,
+      recordIP   : true,
       serverURLs : ''
     });
   }, window.Valine);
