@@ -566,23 +566,23 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-  active:
+  active: gitalk
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
-  lazyload: false
+  lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    #disqus:
-    #  text: Load Disqus
-    #  order: -1
-    #gitalk:
-    #  order: -2
+    disqus:
+     text: disqus
+     order: -2
+    gitalk:
+     order: -1
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: madgd
   count: true
   #post_meta_order: 0
 
@@ -633,12 +633,12 @@ livere_uid: MTAyMC81MjkzNy8yOTQxNA== # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: madgd # GitHub repo owner
+  repo: madgd.github.io # Repository name to store issues
+  client_id: 1ca90711c4a1d311736f # GitHub Application Client ID
+  client_secret: 2f70ae9ce4f250155b035c57ffec9936430546b4 # GitHub Application Client Secret
+  admin_user: madgd # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value

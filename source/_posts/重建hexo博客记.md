@@ -311,6 +311,34 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
 ](https://zhuanlan.zhihu.com/p/33617273)
 
+![](../img/livere.png)
+
+再考虑接入支持github登录管理的，参考[gitalk](https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/):
+
+1. 申请个[GitHub Application](https://github.com/settings/applications/new)，Homepage URL和Authorization callback URL就写成博客地址就行
+![](../img/githubApplication.png)
+2. 提交后会生成clinet ID，点击`Generate a new client secret`按钮，生成一个client secrets
+3. 配置`themes/next/_config.yml`:
+```
+gitalk:
+  enable: true
+  github_id: madgd # GitHub repo owner
+  repo: madgd.github.io # Repository name to store issues
+  client_id:  # GitHub Application Client ID
+  client_secret:  # GitHub Application Client Secret
+  distraction_free_mode: true # Facebook-like distraction free mode
+```
+
+也试下最主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
+1. 申请disqus账号
+2. 配置`themes/next/_config.yml`:
+```
+disqus:
+  enable: true
+  shortname: your_disqus_short_name
+  count: true
+```
+
 ## 2. 引入搜索服务
 
 ***
