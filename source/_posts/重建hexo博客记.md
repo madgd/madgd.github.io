@@ -260,7 +260,7 @@ darkmode: true
 
 language: zh-cn
 
-position: right
+position: left
 # 头像
 avatar:
   url: /img/avatar.png
@@ -304,16 +304,16 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 
 其中disqus需要翻墙，github类的gitment、gitalk、gitter需要github账号，valine无后端，对用户门槛最低。因此优先接入valine。
 
-参考这位老哥的方案[Hexo博客进阶：为Next主题添加Valine评论系统](https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/)
+2.1 参考这位老哥的方案[Hexo博客进阶：为Next主题添加Valine评论系统](https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/)
 
 ![](../img/valine.png)
 
-同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
+2.2 同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
 ](https://zhuanlan.zhihu.com/p/33617273)
 
 ![](../img/livere.png)
 
-再考虑接入支持github登录管理的，参考[gitalk](https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/):
+2.3 再考虑接入支持github登录管理的，参考[gitalk](https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/):
 
 1. 申请个[GitHub Application](https://github.com/settings/applications/new)，Homepage URL和Authorization callback URL就写成博客地址就行
 ![](../img/githubApplication.png)
@@ -331,7 +331,7 @@ gitalk:
 4. 此时会提示`Related Issues not found`，使用自己的github账号第一次登录到新建的博文下的gitalk模块，会自动生成相应的issue。所以养成发文后自己先验证一下效果的习惯即可。当然也可以[使用脚本自动初始化issue](https://cloud.tencent.com/developer/article/1702501)
 ![](../img/githubApplication.png)
 
-也试下最主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
+2.4 也试下最主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
 1. 申请disqus账号
 2. 配置`themes/next/_config.yml`:
 ```
@@ -342,7 +342,7 @@ disqus:
 ```
 ![](../img/disqusComment.png)
 
-调整评论模块的展示：
+2.5 调整评论模块的展示`themes/next/_config.yml`：
 ```
 comments:
   # Available values: tabs | buttons
@@ -362,6 +362,16 @@ comments:
      text: disqus
      order: -2
 ```
-## 2. 引入搜索服务
+
+## 3. 添加fork me on github
+文件位置：\themes\next\layout\_layout.swig，在<div class="headband"></div>下一行添加如下代码。
+```
+<a href="https://www.github.com/madgd" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+```
+
+## 4. 引入搜索服务
+
+## 5. 添加网易云音乐
+参考这位老哥[添加网易云音乐](https://vincentqin.tech/posts/build-a-website-using-hexo/)
 
 ***
