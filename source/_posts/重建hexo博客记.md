@@ -297,5 +297,15 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 
 效果如图：
 ![](../img/lcViewCounter.png)
-## 2. 引入评论模块
+
+## 2. 引入评论
+
+常用评论模块有：[next评论系统](https://www.zhihu.com/question/267598518)
+
+其中disqus需要翻墙，github类的gitment、gitalk、gitter需要github账号，valine无后端，对用户门槛最低。因此优先接入valine。
+
+参考这位老哥的方案[Hexo博客进阶：为Next主题添加Valine评论系统](https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/)
+
+## 2. 引入搜索服务
+
 ***
