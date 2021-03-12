@@ -328,6 +328,8 @@ gitalk:
   client_secret:  # GitHub Application Client Secret
   distraction_free_mode: true # Facebook-like distraction free mode
 ```
+4. 此时会提示`Related Issues not found`，使用自己的github账号第一次登录到新建的博文下的gitalk模块，会自动生成相应的issue。所以养成发文后自己先验证一下效果的习惯即可。当然也可以[使用脚本自动初始化issue](https://cloud.tencent.com/developer/article/1702501)
+![](../img/githubApplication.png)
 
 也试下最主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
 1. 申请disqus账号
@@ -338,7 +340,28 @@ disqus:
   shortname: your_disqus_short_name
   count: true
 ```
+![](../img/disqusComment.png)
 
+调整评论模块的展示：
+```
+comments:
+  # Available values: tabs | buttons
+  style: buttons
+  # Choose a comment system to be displayed by default.
+  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
+  active: gitalk
+  # Setting `true` means remembering the comment system selected by the visitor.
+  storage: true
+  # Lazyload all comment systems.
+  lazyload: true
+  # Modify texts or order for any navs, here are some examples.
+  nav:
+    gitalk:
+     order: -1
+    disqus:
+     text: disqus
+     order: -2
+```
 ## 2. 引入搜索服务
 
 ***

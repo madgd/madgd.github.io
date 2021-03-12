@@ -573,11 +573,12 @@ comments:
   lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
+    gitalk:
+     order: -1
     disqus:
      text: disqus
      order: -2
-    gitalk:
-     order: -1
+
 
 # Disqus
 disqus:
