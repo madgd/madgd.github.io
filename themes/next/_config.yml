@@ -103,7 +103,7 @@ creative_commons:
 scheme: Gemini
 
 # Dark Mode
-darkmode: true
+darkmode: false
 
 
 # ---------------------------------------------------------------
@@ -573,11 +573,15 @@ comments:
   lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
+    livere:
+     order: 1
     gitalk:
-     order: -1
+     order: 2
     disqus:
      text: disqus
-     order: -2
+     order: 3
+    valine:
+     order: 4
 
 
 # Disqus

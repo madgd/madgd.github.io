@@ -308,6 +308,9 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 
 ![](../img/valine.png)
 
+开启新评论[邮件提醒](https://github.com/zhaojun1998/Valine-Admin)
+![](../img/valineAdmin.png)
+
 2.2 同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
 ](https://zhuanlan.zhihu.com/p/33617273)
 
