@@ -417,3 +417,13 @@ comments:
 
 ## 6. 添加分享
 [参考](https://theme-next.iissnan.com/third-party-services.html#share-addthis)
+
+注册完成后，点击右上角`Get The Code`，获取`pubid=`后面的id，修改配置
+```
+add_this_id: ***
+```
+
+点击左上角`Tools`，可设置分享样式。
+
+## 7. 添加google ad
+[在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)
