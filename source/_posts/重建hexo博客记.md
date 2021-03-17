@@ -304,19 +304,40 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 
 其中disqus需要翻墙，github类的gitment、gitalk、gitter需要github账号，valine无后端，对用户门槛最低。因此优先接入valine。
 
-2.1 参考这位老哥的方案[Hexo博客进阶：为Next主题添加Valine评论系统](https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/)
+### 2.1 valine
+参考这位老哥的方案[Hexo博客进阶：为Next主题添加Valine评论系统](https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/)
 
 ![](../img/valine.png)
 
-开启新评论[邮件提醒](https://github.com/zhaojun1998/Valine-Admin)
+开启新评论[邮件提醒](https://github.com/zhaojun1998/Valine-Admin):
+1. 参考以上文档设置leancloud。因leancloud升级，设置页面略有不同，见下图
 ![](../img/valineAdmin.png)
+配置结果：
+![](../img/valineNotice.png)
+2. 设置休眠策略
+可参考以上文档中的休眠策略，按相关内容设置。设置leanCloud自带定时器.
+![](../img/valineCron.png)
 
-2.2 同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
+保存完成后，自动启动。可查看日志验证
+
+todo: 利用server酱开启[微信通知](https://blog.csdn.net/sviptzk/article/details/104641949)
+
+### 2.2 livere
+同时，为了支持带图片评论，接入[来必力](https://livere.com/), 方案参考这位老哥的[Hexo博客优化之实现来必力评论功能
 ](https://zhuanlan.zhihu.com/p/33617273)
 
 ![](../img/livere.png)
 
-2.3 再考虑接入支持github登录管理的，参考[gitalk](https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/):
+点击头像，`管理页面`，`设置`可选择支持登录的sns，单击开关，拖动可调整顺序（个人认为微信什么的要往前放）:
+![](../img/livereSNS.png)
+
+开启新评论邮件提醒：
+![](../img/livereEmailNotice.png)
+
+**\*不知道为什么设置完了就是收不到邮件提醒，哪位老哥了解的请评论区告诉我！**
+
+### 2.3 gitalk
+再考虑接入支持github登录管理的，参考[gitalk](https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/):
 
 1. 申请个[GitHub Application](https://github.com/settings/applications/new)，Homepage URL和Authorization callback URL就写成博客地址就行
 ![](../img/githubApplication.png)
@@ -334,7 +355,13 @@ gitalk:
 4. 此时会提示`Related Issues not found`，使用自己的github账号第一次登录到新建的博文下的gitalk模块，会自动生成相应的issue。所以养成发文后自己先验证一下效果的习惯即可。当然也可以[使用脚本自动初始化issue](https://cloud.tencent.com/developer/article/1702501)
 ![](../img/githubApplication.png)
 
-2.4 也试下最主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
+5. 开启新评论邮件提醒：
+在github中点击右上角头像，`Settings`->`Emails`确认邮箱；然后点击`Notifications`，根据自己的需要，调整通知选项即可。在自己的博客项目主页右上角，点击watch即可注意自己的邮箱是否将通知提醒识别为垃圾邮件。`Email notification preferences:`
+- [x] Comments on Issues and Pull Requests 
+
+
+### 2.4 disqus
+也试下主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
 1. 申请disqus账号
 2. 配置`themes/next/_config.yml`:
 ```
@@ -345,7 +372,16 @@ disqus:
 ```
 ![](../img/disqusComment.png)
 
-2.5 调整评论模块的展示`themes/next/_config.yml`：
+3. 开启新评论邮件提醒
+
+[disqus help](https://help.disqus.com/en/articles/1717254-troubleshooting-email-notifications)
+
+![](../img/disqusNotice.png)
+
+**\*不知道为什么设置完了就是收不到邮件提醒，哪位老哥了解的请评论区告诉我！**
+
+### 2.5 调整评论模块的展示
+`themes/next/_config.yml`：
 ```
 comments:
   # Available values: tabs | buttons

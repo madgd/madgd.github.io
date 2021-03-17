@@ -574,14 +574,14 @@ comments:
   # Modify texts or order for any navs, here are some examples.
   nav:
     livere:
-     order: 1
+     order: 3
     gitalk:
-     order: 2
+     order: 1
     disqus:
      text: disqus
-     order: 3
-    valine:
      order: 4
+    valine:
+     order: 2
 
 
 # Disqus
