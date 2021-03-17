@@ -413,4 +413,7 @@ comments:
 ## 5. 添加网易云音乐
 参考这位老哥[添加网易云音乐](https://vincentqin.tech/posts/build-a-website-using-hexo/)
 
-***
+<center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=20282679&auto=1&height=66"></iframe></center>
+
+## 6. 添加分享
+[参考](https://theme-next.iissnan.com/third-party-services.html#share-addthis)
