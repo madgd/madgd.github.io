@@ -56,6 +56,7 @@ author: madgd
 language: zh
 timezone: 'Asia/Shanghai'
 ```
+
 # 2. 安装next theme
 >hexo有大量主题资源，可以浏览并选择自己喜欢的主题安装[theme](https://hexo.io/themes/)
 
@@ -265,7 +266,14 @@ position: left
 avatar:
   url: /img/avatar.png
 
-author
+# 显示浏览进度
+# Reading progress bar
+reading_progress:
+  enable: true
+  # Available values: top | bottom
+  position: top
+  color: "#37c6c0"
+  height: 3px
 ```
 
 可参考[next使用](http://theme-next.iissnan.com/getting-started.html)
@@ -409,6 +417,7 @@ comments:
 ```
 
 ## 4. 引入搜索服务
+添加[local search](https://theme-next.iissnan.com/third-party-services.html#local-search)
 
 ## 5. 添加网易云音乐
 参考这位老哥[添加网易云音乐](https://vincentqin.tech/posts/build-a-website-using-hexo/)
@@ -425,5 +434,53 @@ add_this_id: ***
 
 点击左上角`Tools`，可设置分享样式。
 
-## 7. 添加google ad
+## 7. 首页不显示文章全文
+[参考](https://ninesix.cc/post/hexo-yilia-auto-excerpt.html)
+安装`hexo-excerpt`:
+```
+npm install -save hexo-excerpt
+```
+**注意`hexo-auto-excerpt`已失效**
+
+编辑`_config.yml`:
+```
+excerpt:
+  depth: 7
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+```
+
+可以通过在博文中任意想截取的地方添加```<!-- more -->```完成自定义长度的摘要。这样在本标识之前的就为博文摘要。
+
+## 8. 添加字数统计/阅读时长
+[参考](https://blog.csdn.net/mqdxiaoxiao/article/details/93670772)
+`_config.yml`：
+```
+# symbols_count_time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 4
+  wpm: 275
+```
+
+`themes/next/_config.yml`：
+```
+symbols_count_time:
+  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）
+  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）
+  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
+  awl: 4                   # Average Word Length
+  wpm: 275                 # Words Per Minute（每分钟阅读词数）
+  suffix: mins.
+```
+
+## 9. 添加“关于”标签
+参考这位老哥[https://zhuanlan.zhihu.com/p/94038688](https://zhuanlan.zhihu.com/p/94038688)
+
+## 8. 添加google ad
 [在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)

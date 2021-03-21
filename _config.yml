@@ -105,10 +105,26 @@ deploy:
   type: ''
 
 
-# leancloud_counter_security:
-#   enable_sync: true
-#   app_id: <your app id>
-#   app_key: <your app key>
-#   server_url: <your server url> # Required for apps from CN region, e.g. https://leancloud.cn
-#   username: <your username> # Will be asked while deploying if is left blank
-#   password: <your password> # Recommmended to be left blank. Will be asked while deploying if is left blank
+# Search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# excerpt
+excerpt:
+  depth: 7
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: false
+
+# symbols_count_time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 4
+  wpm: 275
