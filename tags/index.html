@@ -22,15 +22,17 @@
 
   <meta name="description" content="let&#39;s party">
 <meta property="og:type" content="website">
-<meta property="og:title" content="madgd&#39;s blog">
-<meta property="og:url" content="http://madgd.github.io/archives/2021/02/index.html">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="http://madgd.github.io/tags/index.html">
 <meta property="og:site_name" content="madgd&#39;s blog">
 <meta property="og:description" content="let&#39;s party">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-03-19T02:48:42.000Z">
+<meta property="article:modified_time" content="2021-03-21T14:53:03.885Z">
 <meta property="article:author" content="madgd">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://madgd.github.io/archives/2021/02/">
+<link rel="canonical" href="http://madgd.github.io/tags/">
 
 
 <script id="page-configurations">
@@ -43,7 +45,8 @@
   };
 </script>
 
-  <title>Archive | madgd's blog</title>
+  <title>tags | madgd's blog
+</title>
   
 
 
@@ -209,57 +212,102 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content archive">
+          <div class="content page posts-expand">
             
 
+    
+    
+    
+    <div class="post-block" lang="zh">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">tags
+</h1>
+
+<div class="post-meta">
   
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 5 posts in total. Keep on posting.</span>
-      </div>
+
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-02-25T11:23:07+08:00"
-              content="2021-02-25">
-          02-25
-        </time>
+      
+      
+      <div class="post-body">
+          
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">重建hexo博客记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+      
+      
     </div>
-  </div>
-  
-  
-  
+    
 
-  
-
+    
+    
+    
 
 
           </div>
           
+      <div class="comment-button-group">
+          <a class="btn comment-button gitalk">gitalk</a>
+          <a class="btn comment-button valine">valine</a>
+          <a class="btn comment-button livere">livere</a>
+          <a class="btn comment-button disqus">disqus</a>
+      </div>
+        <div class="comment-position gitalk">
+          <div class="comments" id="gitalk-container"></div>
+        </div>
+        <div class="comment-position valine">
+          <div class="comments" id="valine-comments"></div>
+        </div>
+        <div class="comment-position livere">
+          
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MjkzNy8yOTQxNA=="></div>
+  </div>
+  
+        </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      <script>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(element => {
+            let commentClass = element.classList[2];
+            element.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              element.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              if (CONFIG.comments.storage) {
+                localStorage.setItem('comments_active', commentClass);
+              }
+            });
+          });
+          let { activeClass } = CONFIG.comments;
+          if (CONFIG.comments.storage) {
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          }
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -535,8 +583,62 @@
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
 </script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://madgd.github.io/tags/index.html";
+    this.page.identifier = "tags/index.html";
+    this.page.title = "tags";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://madgd.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '1ca90711c4a1d311736f',
+      clientSecret: '2f70ae9ce4f250155b035c57ffec9936430546b4',
+      repo        : 'madgd.github.io',
+      owner       : 'madgd',
+      admin       : ['madgd'],
+      id          : 'f47af1d1eda4d807b02bba32be15120b',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 
 <script>
