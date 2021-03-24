@@ -49,7 +49,7 @@
 <meta property="og:image" content="http://madgd.github.io/img/disqusComment.png">
 <meta property="og:image" content="http://madgd.github.io/img/disqusNotice.png">
 <meta property="article:published_time" content="2021-02-25T03:23:07.000Z">
-<meta property="article:modified_time" content="2021-03-21T14:53:32.201Z">
+<meta property="article:modified_time" content="2021-03-24T07:06:23.461Z">
 <meta property="article:author" content="madgd">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://madgd.github.io/img/oldBlogFileTree.png">
@@ -266,13 +266,6 @@
 
               <time title="Created: 2021-02-25 11:23:07" itemprop="dateCreated datePublished" datetime="2021-02-25T11:23:07+08:00">2021-02-25</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-21 22:53:32" itemprop="dateModified" datetime="2021-03-21T22:53:32+08:00">2021-03-21</time>
-              </span>
 
           
             <span id="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="重建hexo博客记" title="Views">
@@ -314,14 +307,12 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>9.5k</span>
+              <span>9.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
               <span>9 mins.</span>
             </span>
 
@@ -533,8 +524,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">excerpt:</span><br><span class="line">  depth: 7</span><br><span class="line">  excerpt_excludes: []</span><br><span class="line">  more_excludes: []</span><br><span class="line">  hideWholePostExcerpts: true</span><br></pre></td></tr></table></figure>
 
 <p>可以通过在博文中任意想截取的地方添加<code>&lt;!-- more --&gt;</code>完成自定义长度的摘要。这样在本标识之前的就为博文摘要。</p>
-<h2 id="8-添加字数统计-阅读时长"><a href="#8-添加字数统计-阅读时长" class="headerlink" title="8. 添加字数统计/阅读时长"></a>8. 添加字数统计/阅读时长</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/93670772">参考</a><br><code>_config.yml</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># symbols_count_time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br></pre></td></tr></table></figure>
+<h2 id="8-添加字数统计-阅读时长"><a href="#8-添加字数统计-阅读时长" class="headerlink" title="8. 添加字数统计/阅读时长"></a>8. 添加字数统计/阅读时长</h2><p>参考<a target="_blank" rel="noopener" href="https://www.himmy.cn/2019/07/06/hexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF/">Hexo博客NexT主题下添加字数统计和阅读时长</a></p>
+<p>next主题已支持<code>hexo-symbols-count-time</code>,使用该方案。</p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+<p>修改<code>_config.yml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># symbols_count_time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br></pre></td></tr></table></figure>
 
 <p><code>themes/next/_config.yml</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: 4                   # Average Word Length</span><br><span class="line">  wpm: 275                 # Words Per Minute（每分钟阅读词数）</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
