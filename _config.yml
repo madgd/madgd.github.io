@@ -114,7 +114,7 @@ search:
 
 # excerpt
 excerpt:
-  depth: 7
+  depth: 4
   excerpt_excludes: []
   more_excludes: []
   hideWholePostExcerpts: false

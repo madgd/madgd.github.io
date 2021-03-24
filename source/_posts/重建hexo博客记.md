@@ -454,8 +454,15 @@ excerpt:
 可以通过在博文中任意想截取的地方添加```<!-- more -->```完成自定义长度的摘要。这样在本标识之前的就为博文摘要。
 
 ## 8. 添加字数统计/阅读时长
-[参考](https://blog.csdn.net/mqdxiaoxiao/article/details/93670772)
-`_config.yml`：
+参考[Hexo博客NexT主题下添加字数统计和阅读时长](https://www.himmy.cn/2019/07/06/hexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF/)
+
+next主题已支持`hexo-symbols-count-time`,使用该方案。
+
+安装：
+```
+npm install --save hexo-symbols-count-time
+```
+修改`_config.yml`：
 ```
 # symbols_count_time
 symbols_count_time:
@@ -464,8 +471,6 @@ symbols_count_time:
   total_symbols: true
   total_time: true
   exclude_codeblock: false
-  awl: 4
-  wpm: 275
 ```
 
 `themes/next/_config.yml`：
