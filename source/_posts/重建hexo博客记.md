@@ -487,5 +487,25 @@ symbols_count_time:
 ## 9. 添加“关于”标签
 参考这位老哥[https://zhuanlan.zhihu.com/p/94038688](https://zhuanlan.zhihu.com/p/94038688)
 
+## 10. 添加打赏
+next主题已经支持
+
+修改配置`themes/next/_config.yml`：
+```
+# Reward (Donate)
+# Front-matter variable (unsupport animation).
+reward_settings:
+  # If true, reward will be displayed in every article by default.
+  enable: true
+  animation: false
+  #comment: Donate comment here.
+
+reward:
+  #wechatpay: /images/wechatpay.png
+  #alipay: /images/alipay.png
+  #paypal: /images/paypal.png
+  #bitcoin: /images/bitcoin.png
+```
+
 ## 8. 添加google ad
 [在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)
