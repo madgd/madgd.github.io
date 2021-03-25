@@ -277,7 +277,7 @@ reading_progress:
 ```
 
 可参考[next使用](http://theme-next.iissnan.com/getting-started.html)
-## 1. 开启百度统计&添加阅读量统计
+## 1. 开启百度统计&添加阅读量统计&站点统计
 
 参考[next使用](http://theme-next.iissnan.com/getting-started.html)相关章节
 
@@ -305,6 +305,21 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 
 效果如图：
 ![](../img/lcViewCounter.png)
+
+不蒜子统计(这里只开站点统计，不开页面统计)：
+修改配置`themes/next/_config.yml`：
+```
+# Show Views / Visitors of the website / page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: false
+  post_views_icon: fa fa-eye
+```
 
 ## 2. 引入评论
 
@@ -497,7 +512,7 @@ next主题已经支持
 reward_settings:
   # If true, reward will be displayed in every article by default.
   enable: true
-  animation: false
+  animation: false # 打开后鼠标hover时会有一个神奇的动效
   #comment: Donate comment here.
 
 reward:
@@ -506,6 +521,10 @@ reward:
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
 ```
+
+在微信、支付宝等内生成收款二维码，放到相应目录中即可
+
+![](../img/donation.png)
 
 ## 8. 添加google ad
 [在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)

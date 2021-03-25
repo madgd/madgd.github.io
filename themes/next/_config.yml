@@ -266,7 +266,7 @@ reward_settings:
   # If true, reward will be displayed in every article by default.
   enable: true
   animation: true
-  #comment: Donate comment here.
+  comment: 丢个钢镚
 
 reward:
   wechatpay: /img/wechatpay.png
@@ -719,12 +719,12 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
   total_views_icon: fa fa-eye
-  post_views: true
+  post_views: false
   post_views_icon: fa fa-eye
 
 
