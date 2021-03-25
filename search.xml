@@ -319,7 +319,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scheme: Gemini</span><br><span class="line"></span><br><span class="line"># Dark Mode</span><br><span class="line">darkmode: true</span><br><span class="line"></span><br><span class="line">language: zh-cn</span><br><span class="line"></span><br><span class="line">position: left</span><br><span class="line"># 头像</span><br><span class="line">avatar:</span><br><span class="line">  url: &#x2F;img&#x2F;avatar.png</span><br><span class="line"></span><br><span class="line"># 显示浏览进度</span><br><span class="line"># Reading progress bar</span><br><span class="line">reading_progress:</span><br><span class="line">  enable: true</span><br><span class="line">  # Available values: top | bottom</span><br><span class="line">  position: top</span><br><span class="line">  color: &quot;#37c6c0&quot;</span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure>
 
 <p>可参考<a href="http://theme-next.iissnan.com/getting-started.html">next使用</a></p>
-<h2 id="1-开启百度统计-amp-添加阅读量统计"><a href="#1-开启百度统计-amp-添加阅读量统计" class="headerlink" title="1. 开启百度统计&amp;添加阅读量统计"></a>1. 开启百度统计&amp;添加阅读量统计</h2><p>参考<a href="http://theme-next.iissnan.com/getting-started.html">next使用</a>相关章节</p>
+<h2 id="1-开启百度统计-amp-添加阅读量统计-amp-站点统计"><a href="#1-开启百度统计-amp-添加阅读量统计-amp-站点统计" class="headerlink" title="1. 开启百度统计&amp;添加阅读量统计&amp;站点统计"></a>1. 开启百度统计&amp;添加阅读量统计&amp;站点统计</h2><p>参考<a href="http://theme-next.iissnan.com/getting-started.html">next使用</a>相关章节</p>
 <p>效果如图：<br><img src="/img/baiduAnalytics.png"></p>
 <p>参考<a href="https://cloud.tencent.com/developer/article/1482008">添加文章阅读量统计</a></p>
 <p>注意，按以上步骤配置后并不会立即生效，会提示：</p>
@@ -332,6 +332,9 @@
 
 <p>或者按照<a href="https://github.com/theme-next/hexo-leancloud-counter-security">hexo-leancloud-counter-security</a> 安装并配置</p>
 <p>效果如图：<br><img src="/img/lcViewCounter.png"></p>
+<p>不蒜子统计(这里只开站点统计，不开页面统计)：<br>修改配置<code>themes/next/_config.yml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Show Views &#x2F; Visitors of the website &#x2F; page with busuanzi.</span><br><span class="line"># Get more information on http:&#x2F;&#x2F;ibruce.info&#x2F;2015&#x2F;04&#x2F;04&#x2F;busuanzi</span><br><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: false</span><br><span class="line">  post_views_icon: fa fa-eye</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-引入评论"><a href="#2-引入评论" class="headerlink" title="2. 引入评论"></a>2. 引入评论</h2><p>常用评论模块有：<a href="https://www.zhihu.com/question/267598518">next评论系统</a></p>
 <p>其中disqus需要翻墙，github类的gitment、gitalk、gitter需要github账号，valine无后端，对用户门槛最低。因此优先接入valine。</p>
 <h3 id="2-1-valine"><a href="#2-1-valine" class="headerlink" title="2.1 valine"></a>2.1 valine</h3><p>参考这位老哥的方案<a href="https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Hexo博客进阶：为Next主题添加Valine评论系统</a></p>
@@ -414,8 +417,10 @@
 <h2 id="9-添加“关于”标签"><a href="#9-添加“关于”标签" class="headerlink" title="9. 添加“关于”标签"></a>9. 添加“关于”标签</h2><p>参考这位老哥<a href="https://zhuanlan.zhihu.com/p/94038688">https://zhuanlan.zhihu.com/p/94038688</a></p>
 <h2 id="10-添加打赏"><a href="#10-添加打赏" class="headerlink" title="10. 添加打赏"></a>10. 添加打赏</h2><p>next主题已经支持</p>
 <p>修改配置<code>themes/next/_config.yml</code>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  #comment: Donate comment here.</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  #wechatpay: &#x2F;images&#x2F;wechatpay.png</span><br><span class="line">  #alipay: &#x2F;images&#x2F;alipay.png</span><br><span class="line">  #paypal: &#x2F;images&#x2F;paypal.png</span><br><span class="line">  #bitcoin: &#x2F;images&#x2F;bitcoin.png</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false # 打开后鼠标hover时会有一个神奇的动效</span><br><span class="line">  #comment: Donate comment here.</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  #wechatpay: &#x2F;images&#x2F;wechatpay.png</span><br><span class="line">  #alipay: &#x2F;images&#x2F;alipay.png</span><br><span class="line">  #paypal: &#x2F;images&#x2F;paypal.png</span><br><span class="line">  #bitcoin: &#x2F;images&#x2F;bitcoin.png</span><br></pre></td></tr></table></figure>
 
+<p>在微信、支付宝等内生成收款二维码，放到相应目录中即可</p>
+<p><img src="/img/donation.png"></p>
 <h2 id="8-添加google-ad"><a href="#8-添加google-ad" class="headerlink" title="8. 添加google ad"></a>8. 添加google ad</h2><p><a href="https://www.boris1993.com/others/hexo-next-enable-google-adsense.html">在 NexT 主题中接入 Google AdSense</a></p>
 ]]></content>
   </entry>
