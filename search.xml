@@ -412,6 +412,10 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: 4                   # Average Word Length</span><br><span class="line">  wpm: 275                 # Words Per Minute（每分钟阅读词数）</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
 
 <h2 id="9-添加“关于”标签"><a href="#9-添加“关于”标签" class="headerlink" title="9. 添加“关于”标签"></a>9. 添加“关于”标签</h2><p>参考这位老哥<a href="https://zhuanlan.zhihu.com/p/94038688">https://zhuanlan.zhihu.com/p/94038688</a></p>
+<h2 id="10-添加打赏"><a href="#10-添加打赏" class="headerlink" title="10. 添加打赏"></a>10. 添加打赏</h2><p>next主题已经支持</p>
+<p>修改配置<code>themes/next/_config.yml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  #comment: Donate comment here.</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  #wechatpay: &#x2F;images&#x2F;wechatpay.png</span><br><span class="line">  #alipay: &#x2F;images&#x2F;alipay.png</span><br><span class="line">  #paypal: &#x2F;images&#x2F;paypal.png</span><br><span class="line">  #bitcoin: &#x2F;images&#x2F;bitcoin.png</span><br></pre></td></tr></table></figure>
+
 <h2 id="8-添加google-ad"><a href="#8-添加google-ad" class="headerlink" title="8. 添加google ad"></a>8. 添加google ad</h2><p><a href="https://www.boris1993.com/others/hexo-next-enable-google-adsense.html">在 NexT 主题中接入 Google AdSense</a></p>
 ]]></content>
   </entry>
