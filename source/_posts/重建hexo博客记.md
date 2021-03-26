@@ -1,7 +1,11 @@
 ---
 title: 重建hexo博客记
 date: 2021-02-25 11:23:07
-tags:
+tags: 
+  - blog
+  - hexo
+  - next
+categories: blog
 ---
 工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！
 
@@ -57,7 +61,7 @@ language: zh
 timezone: 'Asia/Shanghai'
 ```
 
-# 2. 安装next theme
+## 2. 安装next theme
 >hexo有大量主题资源，可以浏览并选择自己喜欢的主题安装[theme](https://hexo.io/themes/)
 
 沿用原来使用的theme [next](https://github.com/theme-next/hexo-theme-next)
@@ -72,7 +76,7 @@ theme: next
 ```
 在此`hexo s` 即可看到效果
 ![next](../img/nextstarter.jpeg)
-# 3. 恢复原post
+## 3. 恢复原post
 将原有post的md移动到`_posts`文件夹中，发现标题，时间不对：
 
 ![date_wrong](../img/oldpostDateWrong.png)
@@ -84,7 +88,7 @@ date: 2016-05-25 11:18:09\
 tags:\
 \-\-\-
 
-# 4. 统一图片路径
+## 4. 统一图片路径
 在`source`下建立`img`目录，将所有图片移入，修改图片链接为相对目录：
 ```
 ![img](../img/win10bule2.jpg)
@@ -100,7 +104,7 @@ tags:\
 
 官方介绍了多种[一键部署方案](https://hexo.io/zh-cn/docs/one-command-deployment.html), 这里我们使用github pages
 
-# 0. 保留原代码
+## 0. 保留原代码
 那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？
 
 最好还是github代码库同步。但如果单独新建代码库，又略显多余。
@@ -274,6 +278,20 @@ reading_progress:
   position: top
   color: "#37c6c0"
   height: 3px
+
+# 自定义代码块样式
+codeblock:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: night bright
+  # Add copy button on codeblock
+  copy_button:
+    enable: true
+    # Show text copy result.
+    show_result: true
+    # Available values: default | flat | mac
+    style:
 ```
 
 可参考[next使用](http://theme-next.iissnan.com/getting-started.html)
@@ -320,6 +338,7 @@ busuanzi_count:
   post_views: false
   post_views_icon: fa fa-eye
 ```
+![](../img/busuanzi.png)
 
 ## 2. 引入评论
 
@@ -499,8 +518,12 @@ symbols_count_time:
   suffix: mins.
 ```
 
-## 9. 添加“关于”标签
-参考这位老哥[https://zhuanlan.zhihu.com/p/94038688](https://zhuanlan.zhihu.com/p/94038688)
+## 9. 添加"About"/"Tags"/"Categries"/"404"标签
+参考这位老哥[关于](https://zhuanlan.zhihu.com/p/94038688)
+
+关于的内容可自行编写md
+
+添加[标签、分类、404](http://theme-next.iissnan.com/theme-settings.html)
 
 ## 10. 添加打赏
 next主题已经支持
@@ -526,5 +549,62 @@ reward:
 
 ![](../img/donation.png)
 
-## 8. 添加google ad
+## 11. 添加rss订阅
+参考这位老哥[给 Hexo 中的 Next 主题添加 RSS 功能](https://suyin-blog.club/2020/2M3YWE7/#6044633dd0ba635b64a0cc0c)
+
+## 12. 添加背景动效
+next主题自带集中背景动效支持，但需先安装依赖包
+```
+$ cd themes/next
+$ git clone https://github.com/theme-next/theme-next-three source/lib/three
+```
+配置主题`themes/next/_config.yml`：
+```
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+three:
+  enable: true
+  three_waves: true
+  canvas_lines: false
+  canvas_sphere: false
+```
+
+## 13. 添加加载进度条
+看[github主页](https://github.com/theme-next/theme-next-pace)
+
+## 14. 添加看板娘
+使用大佬[张书樵](https://zhangshuqiao.org/)修改过得方案：[在网页中添加 Live2D 看板娘](https://zhangshuqiao.org/2018-07/%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E6%B7%BB%E5%8A%A0Live2D%E7%9C%8B%E6%9D%BF%E5%A8%98/)
+
+添加依赖：
+```
+git clone https://github.com/stevenjoezhang/live2d-widget.git source/live2d-widget
+```
+配置`source/live2d-widget/autoload.js`：
+```
+const live2d_path = "/live2d-widget/";
+```
+修改`themes/next/layout/_layout.swig`,在`</head>`前添加：
+```
+...
+  <script src="/live2d-widget/autoload.js"></script>
+</head>
+```
+重新预览可看到效果。
+
+不过没有看到大佬提供自定义设置的方法，大家可以试试[这个方案](https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/) 或者 [这个方案](https://suyin-blog.club/2019/E3X1V5/)
+
+## 15. 开启版权声明
+查看[issue](https://github.com/theme-next/hexo-theme-next/issues/1016)可知，原`post_copyright`配置已经移除，使用新的配置`themes/next/_config.yml`:
+```
+creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language: ch-zn
+```
+
+## 11. 站点地图
+
+
+## 12. 添加google ad
 [在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)

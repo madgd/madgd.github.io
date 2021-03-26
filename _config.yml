@@ -8,7 +8,7 @@ subtitle: ''
 description: let's party
 keywords:
 author: madgd
-language: zh
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -128,3 +128,18 @@ symbols_count_time:
   exclude_codeblock: false
   awl: 4
   wpm: 275
+
+# RSS
+# https://github.com/hexojs/hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
