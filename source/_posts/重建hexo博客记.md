@@ -6,6 +6,8 @@ tags:
   - hexo
   - next
 categories: blog
+# sticky: 100
+# hide: true
 ---
 工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！
 
@@ -632,8 +634,45 @@ creative_commons:
   language: ch-zn
 ```
 
-## 16. 站点地图
+## 16. 置顶和隐藏
+还是[张书樵](https://zhangshuqiao.org/)大佬的，[主页](https://github.com/next-theme/hexo-generator-indexed)
+
+安装：
+```
+npm install hexo-generator-indexed
+```
+在post头部的[Front-matter](https://hexo.io/docs/front-matter)中添加以下配置：
+
+置顶：`sticky: 100`，数字越大置顶优先级越高
+
+隐藏：`hide: true`
+
+## 17. 站点地图
 [参考](https://zhuanlan.zhihu.com/p/94038688)
+或[项目github](https://github.com/hexojs/hexo-generator-sitemap)
+
+安装：
+```
+$ npm install hexo-generator-sitemap --save
+```
+配置`_config.yml`:
+```
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+```
+`themes/next/_config.yml`:
+```
+menu:
+    sitemap: /sitemap.xml || sitemap
+```
+
+点击站点地图会看到`sitemap.xml`的文件
+
+## 18. 向搜索引擎自动提交索引编制请求
+[参考](https://suyin-blog.club/2020/323EH2Y/?highlight=nest)
 
 
 ## 12. 添加google ad

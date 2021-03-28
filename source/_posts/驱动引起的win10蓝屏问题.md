@@ -1,7 +1,9 @@
 ---
 title: 驱动引起的win10蓝屏问题
 date: 2016-05-25 11:18:09
-tags:
+tags: 
+  - windows
+# sticky: 10
 ---
 
 这是一个悲伤的故事
