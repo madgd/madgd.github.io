@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,10 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"livere":{"order":3},"gitalk":{"order":1},"disqus":{"text":"disqus","order":4},"valine":{"order":2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"livere":{"order":3},"gitalk":{"order":1},"disqus":{"text":"disqus","order":4},"valine":{"order":2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！ 0x00 恢复原博客0 尝试直接github同步太久没弄了">
@@ -26,7 +28,7 @@
 <meta property="og:url" content="http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/index.html">
 <meta property="og:site_name" content="madgd&#39;s blog">
 <meta property="og:description" content="工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！ 0x00 恢复原博客0 尝试直接github同步太久没弄了">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://madgd.github.io/img/oldBlogFileTree.png">
 <meta property="og:image" content="http://madgd.github.io/img/hexostarter.png">
 <meta property="og:image" content="http://madgd.github.io/img/nextstarter.jpeg">
@@ -37,6 +39,7 @@
 <meta property="og:image" content="http://madgd.github.io/img/travisComplete.png">
 <meta property="og:image" content="http://madgd.github.io/img/baiduAnalytics.png">
 <meta property="og:image" content="http://madgd.github.io/img/lcViewCounter.png">
+<meta property="og:image" content="http://madgd.github.io/img/busuanzi.png">
 <meta property="og:image" content="http://madgd.github.io/img/valine.png">
 <meta property="og:image" content="http://madgd.github.io/img/valineAdmin.png">
 <meta property="og:image" content="http://madgd.github.io/img/valineNotice.png">
@@ -50,8 +53,11 @@
 <meta property="og:image" content="http://madgd.github.io/img/disqusNotice.png">
 <meta property="og:image" content="http://madgd.github.io/img/donation.png">
 <meta property="article:published_time" content="2021-02-25T03:23:07.000Z">
-<meta property="article:modified_time" content="2021-03-25T08:29:18.981Z">
+<meta property="article:modified_time" content="2021-03-28T07:44:04.413Z">
 <meta property="article:author" content="madgd">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://madgd.github.io/img/oldBlogFileTree.png">
 
@@ -64,7 +70,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh'
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -108,6 +114,8 @@
   </style>
 </noscript>
 
+  <script src="/live2d-widget/autoload.js"></script>
+<link rel="alternate" href="/atom.xml" title="madgd's blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -118,7 +126,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -148,46 +156,41 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
 
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
 
-    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
   </ul>
@@ -203,7 +206,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -241,7 +244,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -263,17 +266,26 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2021-02-25 11:23:07" itemprop="dateCreated datePublished" datetime="2021-02-25T11:23:07+08:00">2021-02-25</time>
+              <time title="创建时间：2021-02-25 11:23:07" itemprop="dateCreated datePublished" datetime="2021-02-25T11:23:07+08:00">2021-02-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                </span>
             </span>
 
           
-            <span id="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="重建hexo博客记" title="Views">
+            <span id="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="重建hexo博客记" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -282,7 +294,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-comment"></i>
       </span>
-      <span class="post-meta-item-text">Disqus: </span>
+      <span class="post-meta-item-text">Disqus：</span>
     
     <a title="disqus" href="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/25/重建hexo博客记/" itemprop="commentCount"></span>
@@ -296,7 +308,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-comment"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" itemprop="commentCount"></span>
@@ -304,17 +316,17 @@
   </span>
   
   <br>
-            <span class="post-meta-item" title="Symbols count in article">
+            <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>10k</span>
+              <span>12k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>9 mins.</span>
+              <span>11 分钟</span>
             </span>
 
         </div>
@@ -351,7 +363,7 @@
 <p>做一点站点的基础配置，编辑<code>_config.yml</code>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: madgd&#39;s blog</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: let&#39;s party</span><br><span class="line">keywords:</span><br><span class="line">author: madgd</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#39;Asia&#x2F;Shanghai&#39;</span><br></pre></td></tr></table></figure>
 
-<h1 id="2-安装next-theme"><a href="#2-安装next-theme" class="headerlink" title="2. 安装next theme"></a>2. 安装next theme</h1><blockquote>
+<h2 id="2-安装next-theme"><a href="#2-安装next-theme" class="headerlink" title="2. 安装next theme"></a>2. 安装next theme</h2><blockquote>
 <p>hexo有大量主题资源，可以浏览并选择自己喜欢的主题安装<a target="_blank" rel="noopener" href="https://hexo.io/themes/">theme</a></p>
 </blockquote>
 <p>沿用原来使用的theme <a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next</a></p>
@@ -360,20 +372,20 @@
 <p>编辑<code>_config.yml</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
 <p>在此<code>hexo s</code> 即可看到效果<br><img src="/img/nextstarter.jpeg" alt="next"></p>
-<h1 id="3-恢复原post"><a href="#3-恢复原post" class="headerlink" title="3. 恢复原post"></a>3. 恢复原post</h1><p>将原有post的md移动到<code>_posts</code>文件夹中，发现标题，时间不对：</p>
+<h2 id="3-恢复原post"><a href="#3-恢复原post" class="headerlink" title="3. 恢复原post"></a>3. 恢复原post</h2><p>将原有post的md移动到<code>_posts</code>文件夹中，发现标题，时间不对：</p>
 <p><img src="/img/oldpostDateWrong.png" alt="date_wrong"></p>
 <p>好解决，在md头部添加信息，即可修复标题、时间：</p>
 <blockquote>
 <p>---<br>title: test<br>date: 2016-05-25 11:18:09<br>tags:<br>---</p>
 </blockquote>
-<h1 id="4-统一图片路径"><a href="#4-统一图片路径" class="headerlink" title="4. 统一图片路径"></a>4. 统一图片路径</h1><p>在<code>source</code>下建立<code>img</code>目录，将所有图片移入，修改图片链接为相对目录：</p>
+<h2 id="4-统一图片路径"><a href="#4-统一图片路径" class="headerlink" title="4. 统一图片路径"></a>4. 统一图片路径</h2><p>在<code>source</code>下建立<code>img</code>目录，将所有图片移入，修改图片链接为相对目录：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![img](&#x2F;img&#x2F;win10bule2.jpg)</span><br></pre></td></tr></table></figure>
 
 <p><strong>至此原博客工作目录恢复完成，可以开始编辑新的博文了</strong></p>
 <p>如何部署后文再讲</p>
 <hr>
 <h1 id="0x01-部署"><a href="#0x01-部署" class="headerlink" title="0x01 部署"></a>0x01 部署</h1><p>官方介绍了多种<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment.html">一键部署方案</a>, 这里我们使用github pages</p>
-<h1 id="0-保留原代码"><a href="#0-保留原代码" class="headerlink" title="0. 保留原代码"></a>0. 保留原代码</h1><p>那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？</p>
+<h2 id="0-保留原代码"><a href="#0-保留原代码" class="headerlink" title="0. 保留原代码"></a>0. 保留原代码</h2><p>那么怎么保留hexo的原目录，以防在换电脑时避免文件丢失呢？</p>
 <p>最好还是github代码库同步。但如果单独新建代码库，又略显多余。</p>
 <p>一种主流方案是通过手动双<code>branch</code>实现：</p>
 <blockquote>
@@ -440,7 +452,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: madgd&#39;s blog</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: let&#39;s party</span><br><span class="line">keywords:</span><br><span class="line">author: madgd</span><br><span class="line">language: zh</span><br><span class="line">timezone: &#39;Asia&#x2F;Shanghai&#39;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>编辑<code>themes/next/_config.yml</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">scheme: Gemini</span><br><span class="line"></span><br><span class="line"># Dark Mode</span><br><span class="line">darkmode: true</span><br><span class="line"></span><br><span class="line">language: zh-cn</span><br><span class="line"></span><br><span class="line">position: left</span><br><span class="line"># 头像</span><br><span class="line">avatar:</span><br><span class="line">  url: &#x2F;img&#x2F;avatar.png</span><br><span class="line"></span><br><span class="line"># 显示浏览进度</span><br><span class="line"># Reading progress bar</span><br><span class="line">reading_progress:</span><br><span class="line">  enable: true</span><br><span class="line">  # Available values: top | bottom</span><br><span class="line">  position: top</span><br><span class="line">  color: &quot;#37c6c0&quot;</span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">scheme: Gemini</span><br><span class="line"></span><br><span class="line"># Dark Mode</span><br><span class="line">darkmode: true</span><br><span class="line"></span><br><span class="line">language: zh-cn</span><br><span class="line"></span><br><span class="line">position: left</span><br><span class="line"># 头像</span><br><span class="line">avatar:</span><br><span class="line">  url: &#x2F;img&#x2F;avatar.png</span><br><span class="line"></span><br><span class="line"># 显示浏览进度</span><br><span class="line"># Reading progress bar</span><br><span class="line">reading_progress:</span><br><span class="line">  enable: true</span><br><span class="line">  # Available values: top | bottom</span><br><span class="line">  position: top</span><br><span class="line">  color: &quot;#37c6c0&quot;</span><br><span class="line">  height: 3px</span><br><span class="line"></span><br><span class="line"># 自定义代码块样式</span><br><span class="line">codeblock:</span><br><span class="line">  # Code Highlight theme</span><br><span class="line">  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span><br><span class="line">  # See: https:&#x2F;&#x2F;github.com&#x2F;chriskempson&#x2F;tomorrow-theme</span><br><span class="line">  highlight_theme: night bright</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true</span><br><span class="line">    # Show text copy result.</span><br><span class="line">    show_result: true</span><br><span class="line">    # Available values: default | flat | mac</span><br><span class="line">    style:</span><br></pre></td></tr></table></figure>
 
 <p>可参考<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">next使用</a></p>
 <h2 id="1-开启百度统计-amp-添加阅读量统计-amp-站点统计"><a href="#1-开启百度统计-amp-添加阅读量统计-amp-站点统计" class="headerlink" title="1. 开启百度统计&amp;添加阅读量统计&amp;站点统计"></a>1. 开启百度统计&amp;添加阅读量统计&amp;站点统计</h2><p>参考<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">next使用</a>相关章节</p>
@@ -458,7 +470,7 @@
 <p>效果如图：<br><img src="/img/lcViewCounter.png"></p>
 <p>不蒜子统计(这里只开站点统计，不开页面统计)：<br>修改配置<code>themes/next/_config.yml</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Show Views &#x2F; Visitors of the website &#x2F; page with busuanzi.</span><br><span class="line"># Get more information on http:&#x2F;&#x2F;ibruce.info&#x2F;2015&#x2F;04&#x2F;04&#x2F;busuanzi</span><br><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true</span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: true</span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: false</span><br><span class="line">  post_views_icon: fa fa-eye</span><br></pre></td></tr></table></figure>
-
+<p><img src="/img/busuanzi.png"></p>
 <h2 id="2-引入评论"><a href="#2-引入评论" class="headerlink" title="2. 引入评论"></a>2. 引入评论</h2><p>常用评论模块有：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/267598518">next评论系统</a></p>
 <p>其中disqus需要翻墙，github类的gitment、gitalk、gitter需要github账号，valine无后端，对用户门槛最低。因此优先接入valine。</p>
 <h3 id="2-1-valine"><a href="#2-1-valine" class="headerlink" title="2.1 valine"></a>2.1 valine</h3><p>参考这位老哥的方案<a target="_blank" rel="noopener" href="https://qianfanguojin.github.io/2019/07/23/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Hexo博客进阶：为Next主题添加Valine评论系统</a></p>
@@ -538,14 +550,36 @@
 <p><code>themes/next/_config.yml</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: 4                   # Average Word Length</span><br><span class="line">  wpm: 275                 # Words Per Minute（每分钟阅读词数）</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
 
-<h2 id="9-添加“关于”标签"><a href="#9-添加“关于”标签" class="headerlink" title="9. 添加“关于”标签"></a>9. 添加“关于”标签</h2><p>参考这位老哥<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94038688">https://zhuanlan.zhihu.com/p/94038688</a></p>
+<h2 id="9-添加”About”-“Tags”-“Categries”-“404”标签"><a href="#9-添加”About”-“Tags”-“Categries”-“404”标签" class="headerlink" title="9. 添加”About”/“Tags”/“Categries”/“404”标签"></a>9. 添加”About”/“Tags”/“Categries”/“404”标签</h2><p>参考这位老哥<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94038688">关于</a></p>
+<p>关于的内容可自行编写md</p>
+<p>添加<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/theme-settings.html">标签、分类、404</a></p>
 <h2 id="10-添加打赏"><a href="#10-添加打赏" class="headerlink" title="10. 添加打赏"></a>10. 添加打赏</h2><p>next主题已经支持</p>
 <p>修改配置<code>themes/next/_config.yml</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Reward (Donate)</span><br><span class="line"># Front-matter variable (unsupport animation).</span><br><span class="line">reward_settings:</span><br><span class="line">  # If true, reward will be displayed in every article by default.</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false # 打开后鼠标hover时会有一个神奇的动效</span><br><span class="line">  #comment: Donate comment here.</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  #wechatpay: &#x2F;images&#x2F;wechatpay.png</span><br><span class="line">  #alipay: &#x2F;images&#x2F;alipay.png</span><br><span class="line">  #paypal: &#x2F;images&#x2F;paypal.png</span><br><span class="line">  #bitcoin: &#x2F;images&#x2F;bitcoin.png</span><br></pre></td></tr></table></figure>
 
 <p>在微信、支付宝等内生成收款二维码，放到相应目录中即可</p>
 <p><img src="/img/donation.png"></p>
-<h2 id="8-添加google-ad"><a href="#8-添加google-ad" class="headerlink" title="8. 添加google ad"></a>8. 添加google ad</h2><p><a target="_blank" rel="noopener" href="https://www.boris1993.com/others/hexo-next-enable-google-adsense.html">在 NexT 主题中接入 Google AdSense</a></p>
+<h2 id="11-添加rss订阅"><a href="#11-添加rss订阅" class="headerlink" title="11. 添加rss订阅"></a>11. 添加rss订阅</h2><p>参考这位老哥<a target="_blank" rel="noopener" href="https://suyin-blog.club/2020/2M3YWE7/#6044633dd0ba635b64a0cc0c">给 Hexo 中的 Next 主题添加 RSS 功能</a></p>
+<h2 id="12-添加背景动效"><a href="#12-添加背景动效" class="headerlink" title="12. 添加背景动效"></a>12. 添加背景动效</h2><p>next主题自带集中背景动效支持，但需先安装依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-three source&#x2F;lib&#x2F;three</span><br></pre></td></tr></table></figure>
+<p>配置主题<code>themes/next/_config.yml</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># JavaScript 3D library.</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-three</span><br><span class="line">three:</span><br><span class="line">  enable: true</span><br><span class="line">  three_waves: true</span><br><span class="line">  canvas_lines: false</span><br><span class="line">  canvas_sphere: false</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-添加加载进度条"><a href="#13-添加加载进度条" class="headerlink" title="13. 添加加载进度条"></a>13. 添加加载进度条</h2><p>看<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-pace">github主页</a></p>
+<h2 id="14-添加看板娘"><a href="#14-添加看板娘" class="headerlink" title="14. 添加看板娘"></a>14. 添加看板娘</h2><p>使用大佬<a target="_blank" rel="noopener" href="https://zhangshuqiao.org/">张书樵</a>修改过得方案：<a target="_blank" rel="noopener" href="https://zhangshuqiao.org/2018-07/%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E6%B7%BB%E5%8A%A0Live2D%E7%9C%8B%E6%9D%BF%E5%A8%98/">在网页中添加 Live2D 看板娘</a></p>
+<p>添加依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;stevenjoezhang&#x2F;live2d-widget.git source&#x2F;live2d-widget</span><br></pre></td></tr></table></figure>
+<p>配置<code>source/live2d-widget/autoload.js</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const live2d_path &#x3D; &quot;&#x2F;live2d-widget&#x2F;&quot;;</span><br></pre></td></tr></table></figure>
+<p>修改<code>themes/next/layout/_layout.swig</code>,在<code>&lt;/head&gt;</code>前添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;live2d-widget&#x2F;autoload.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br></pre></td></tr></table></figure>
+<p>重新预览可看到效果。</p>
+<p>不过没有看到大佬提供自定义设置的方法，大家可以试试<a target="_blank" rel="noopener" href="https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/">这个方案</a> 或者 <a target="_blank" rel="noopener" href="https://suyin-blog.club/2019/E3X1V5/">这个方案</a></p>
+<h2 id="15-开启版权声明"><a href="#15-开启版权声明" class="headerlink" title="15. 开启版权声明"></a>15. 开启版权声明</h2><p>查看<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next/issues/1016">issue</a>可知，原<code>post_copyright</code>配置已经移除，使用新的配置<code>themes/next/_config.yml</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true</span><br><span class="line">  post: true</span><br><span class="line">  language: ch-zn</span><br></pre></td></tr></table></figure>
+
+<h2 id="16-站点地图"><a href="#16-站点地图" class="headerlink" title="16. 站点地图"></a>16. 站点地图</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94038688">参考</a></p>
+<h2 id="12-添加google-ad"><a href="#12-添加google-ad" class="headerlink" title="12. 添加google ad"></a>12. 添加google ad</h2><p><a target="_blank" rel="noopener" href="https://www.boris1993.com/others/hexo-next-enable-google-adsense.html">在 NexT 主题中接入 Google AdSense</a></p>
 
     </div>
 
@@ -555,25 +589,47 @@
         <div class="reward-container">
   <div>丢个钢镚</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donate
+    打赏
   </button>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/img/wechatpay.png" alt="madgd WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/img/wechatpay.png" alt="madgd 微信支付">
+        <p>微信支付</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/img/alipay.jpeg" alt="madgd Alipay">
-        <p>Alipay</p>
+        <img src="/img/alipay.jpeg" alt="madgd 支付宝">
+        <p>支付宝</p>
       </div>
 
   </div>
 </div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>madgd
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/" title="重建hexo博客记">http://madgd.github.io/2021/02/25/重建hexo博客记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"># blog</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
 
         
 
@@ -689,16 +745,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">0x00 恢复原博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%B0%9D%E8%AF%95%E7%9B%B4%E6%8E%A5github%E5%90%8C%E6%AD%A5"><span class="nav-number">1.1.</span> <span class="nav-text">0 尝试直接github同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">1. 安装hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85next-theme"><span class="nav-number">2.</span> <span class="nav-text">2. 安装next theme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%81%A2%E5%A4%8D%E5%8E%9Fpost"><span class="nav-number">3.</span> <span class="nav-text">3. 恢复原post</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-number">4.</span> <span class="nav-text">4. 统一图片路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-%E9%83%A8%E7%BD%B2"><span class="nav-number">5.</span> <span class="nav-text">0x01 部署</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E4%BF%9D%E7%95%99%E5%8E%9F%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">0. 保留原代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%87%87%E5%9D%91%E8%A7%A3%E5%86%B3"><span class="nav-number">6.1.</span> <span class="nav-text">1. 采坑解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99"><span class="nav-number">6.1.1.</span> <span class="nav-text">1.1 部署报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BF%AE%E5%A4%8D%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%94%99%E8%AF%AF"><span class="nav-number">6.1.2.</span> <span class="nav-text">1.2 修复图片路径错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93"><span class="nav-number">6.2.</span> <span class="nav-text">2. 方案总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-%E8%A3%85%E4%BF%AE"><span class="nav-number">7.</span> <span class="nav-text">0x02 装修</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.1.</span> <span class="nav-text">0. 个性化设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%80%E5%90%AF%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1-amp-%E6%B7%BB%E5%8A%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1-amp-%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1"><span class="nav-number">7.2.</span> <span class="nav-text">1. 开启百度统计&amp;添加阅读量统计&amp;站点统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%95%E5%85%A5%E8%AF%84%E8%AE%BA"><span class="nav-number">7.3.</span> <span class="nav-text">2. 引入评论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-valine"><span class="nav-number">7.3.1.</span> <span class="nav-text">2.1 valine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-livere"><span class="nav-number">7.3.2.</span> <span class="nav-text">2.2 livere</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-gitalk"><span class="nav-number">7.3.3.</span> <span class="nav-text">2.3 gitalk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-disqus"><span class="nav-number">7.3.4.</span> <span class="nav-text">2.4 disqus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E8%B0%83%E6%95%B4%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%95%E7%A4%BA"><span class="nav-number">7.3.5.</span> <span class="nav-text">2.5 调整评论模块的展示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B7%BB%E5%8A%A0fork-me-on-github"><span class="nav-number">7.4.</span> <span class="nav-text">3. 添加fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%BC%95%E5%85%A5%E6%90%9C%E7%B4%A2%E6%9C%8D%E5%8A%A1"><span class="nav-number">7.5.</span> <span class="nav-text">4. 引入搜索服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="nav-number">7.6.</span> <span class="nav-text">5. 添加网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%B7%BB%E5%8A%A0%E5%88%86%E4%BA%AB"><span class="nav-number">7.7.</span> <span class="nav-text">6. 添加分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87"><span class="nav-number">7.8.</span> <span class="nav-text">7. 首页不显示文章全文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1-%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF"><span class="nav-number">7.9.</span> <span class="nav-text">8. 添加字数统计&#x2F;阅读时长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%B7%BB%E5%8A%A0%E2%80%9C%E5%85%B3%E4%BA%8E%E2%80%9D%E6%A0%87%E7%AD%BE"><span class="nav-number">7.10.</span> <span class="nav-text">9. 添加“关于”标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F"><span class="nav-number">7.11.</span> <span class="nav-text">10. 添加打赏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%B7%BB%E5%8A%A0google-ad"><span class="nav-number">7.12.</span> <span class="nav-text">8. 添加google ad</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-%E6%81%A2%E5%A4%8D%E5%8E%9F%E5%8D%9A%E5%AE%A2"><span class="nav-text">0x00 恢复原博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%B0%9D%E8%AF%95%E7%9B%B4%E6%8E%A5github%E5%90%8C%E6%AD%A5"><span class="nav-text">0 尝试直接github同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85hexo"><span class="nav-text">1. 安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85next-theme"><span class="nav-text">2. 安装next theme</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%81%A2%E5%A4%8D%E5%8E%9Fpost"><span class="nav-text">3. 恢复原post</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%BB%9F%E4%B8%80%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="nav-text">4. 统一图片路径</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-%E9%83%A8%E7%BD%B2"><span class="nav-text">0x01 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E4%BF%9D%E7%95%99%E5%8E%9F%E4%BB%A3%E7%A0%81"><span class="nav-text">0. 保留原代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%87%87%E5%9D%91%E8%A7%A3%E5%86%B3"><span class="nav-text">1. 采坑解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99"><span class="nav-text">1.1 部署报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BF%AE%E5%A4%8D%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%94%99%E8%AF%AF"><span class="nav-text">1.2 修复图片路径错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93"><span class="nav-text">2. 方案总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-%E8%A3%85%E4%BF%AE"><span class="nav-text">0x02 装修</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="nav-text">0. 个性化设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%80%E5%90%AF%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1-amp-%E6%B7%BB%E5%8A%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1-amp-%E7%AB%99%E7%82%B9%E7%BB%9F%E8%AE%A1"><span class="nav-text">1. 开启百度统计&amp;添加阅读量统计&amp;站点统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%95%E5%85%A5%E8%AF%84%E8%AE%BA"><span class="nav-text">2. 引入评论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-valine"><span class="nav-text">2.1 valine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-livere"><span class="nav-text">2.2 livere</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-gitalk"><span class="nav-text">2.3 gitalk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-disqus"><span class="nav-text">2.4 disqus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E8%B0%83%E6%95%B4%E8%AF%84%E8%AE%BA%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%95%E7%A4%BA"><span class="nav-text">2.5 调整评论模块的展示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B7%BB%E5%8A%A0fork-me-on-github"><span class="nav-text">3. 添加fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%BC%95%E5%85%A5%E6%90%9C%E7%B4%A2%E6%9C%8D%E5%8A%A1"><span class="nav-text">4. 引入搜索服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="nav-text">5. 添加网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%B7%BB%E5%8A%A0%E5%88%86%E4%BA%AB"><span class="nav-text">6. 添加分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%85%A8%E6%96%87"><span class="nav-text">7. 首页不显示文章全文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1-%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF"><span class="nav-text">8. 添加字数统计&#x2F;阅读时长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%B7%BB%E5%8A%A0%E2%80%9DAbout%E2%80%9D-%E2%80%9CTags%E2%80%9D-%E2%80%9CCategries%E2%80%9D-%E2%80%9C404%E2%80%9D%E6%A0%87%E7%AD%BE"><span class="nav-text">9. 添加”About”&#x2F;“Tags”&#x2F;“Categries”&#x2F;“404”标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F"><span class="nav-text">10. 添加打赏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E6%B7%BB%E5%8A%A0rss%E8%AE%A2%E9%98%85"><span class="nav-text">11. 添加rss订阅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E6%B7%BB%E5%8A%A0%E8%83%8C%E6%99%AF%E5%8A%A8%E6%95%88"><span class="nav-text">12. 添加背景动效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E6%B7%BB%E5%8A%A0%E5%8A%A0%E8%BD%BD%E8%BF%9B%E5%BA%A6%E6%9D%A1"><span class="nav-text">13. 添加加载进度条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98"><span class="nav-text">14. 添加看板娘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E5%BC%80%E5%90%AF%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E"><span class="nav-text">15. 开启版权声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE"><span class="nav-text">16. 站点地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E6%B7%BB%E5%8A%A0google-ad"><span class="nav-text">12. 添加google ad</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -715,8 +771,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -727,9 +795,25 @@
       <span class="links-of-author-item">
         <a href="mailto:iamnushead@gmail.com" title="E-Mail → mailto:iamnushead@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://liangzhenduo0608.github.io/" title="https:&#x2F;&#x2F;liangzhenduo0608.github.io" rel="noopener" target="_blank">shintaku</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -759,14 +843,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">14k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13 mins.</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
   <div class="addthis_inline_share_toolbox">
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6051d298fa8d501f" async="async"></script>
@@ -779,7 +863,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
-      <span class="site-uv" title="Total Visitors">
+      <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
@@ -788,7 +872,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
-      <span class="site-pv" title="Total Views">
+      <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
@@ -981,7 +1065,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       owner       : 'madgd',
       admin       : ['madgd'],
       id          : 'a03ea70b75168c71d135db422957215c',
-        language: '',
+        language: 'zh-CN',
       distractionFreeMode: true
     });
     gitalk.render('gitalk-container');

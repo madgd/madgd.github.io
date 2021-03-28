@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>madgd&#39;s blog</title>
+  <icon>http://madgd.github.io/icon.png</icon>
+  
+  <link href="http://madgd.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://madgd.github.io/"/>
+  <updated>2021-03-28T07:44:04.413Z</updated>
+  <id>http://madgd.github.io/</id>
+  
+  <author>
+    <name>madgd</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重建hexo博客记</title>
+    <link href="http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/"/>
+    <id>http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/</id>
+    <published>2021-02-25T03:23:07.000Z</published>
+    <updated>2021-03-28T07:44:04.413Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！&lt;/p&gt;
+&lt;h1 id=&quot;0x00-恢复原博客&quot;&gt;&lt;a href=&quot;#0x00-恢复原博客&quot; class=&quot;headerlink&quot; title=&quot;0x00 恢复原博客&quot;&gt;&lt;/a&gt;0x00 恢复原博客&lt;/h1&gt;&lt;h2 id=&quot;0-尝试直接github同步&quot;&gt;&lt;a href=&quot;#0-尝试直接github同步&quot; class=&quot;headerlink&quot; title=&quot;0 尝试直接github同步&quot;&gt;&lt;/a&gt;0 尝试直接github同步&lt;/h2&gt;&lt;p&gt;太久没弄了，早忘了该怎么操作，先把github中的代码库拉下来看看&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="blog" scheme="http://madgd.github.io/categories/blog/"/>
+    
+    
+    <category term="blog" scheme="http://madgd.github.io/tags/blog/"/>
+    
+    <category term="hexo" scheme="http://madgd.github.io/tags/hexo/"/>
+    
+    <category term="next" scheme="http://madgd.github.io/tags/next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>给一组长度不定的数求这些数组合出的最大整数</title>
+    <link href="http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/"/>
+    <id>http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/</id>
+    <published>2016-05-25T16:00:00.000Z</published>
+    <updated>2021-03-28T07:44:04.413Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;0x00-问题&quot;&gt;&lt;a href=&quot;#0x00-问题&quot; class=&quot;headerlink&quot; title=&quot;0x00 问题&quot;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;一个题目:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给一组长短不一的数字，求这组数字前后链接能组成的最大整数。&lt;br&gt;如&lt;code&gt;87 879 8787&lt;/code&gt;组成最大整数为&lt;code&gt;8798787&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;0x01-思路&quot;&gt;&lt;a href=&quot;#0x01-思路&quot; class=&quot;headerlink&quot; title=&quot;0x01 思路&quot;&gt;&lt;/a&gt;0x01 思路&lt;/h2&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://madgd.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>驱动引起的win10蓝屏问题</title>
+    <link href="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/</id>
+    <published>2016-05-25T03:18:09.000Z</published>
+    <updated>2021-03-28T07:44:04.413Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这是一个悲伤的故事&lt;/p&gt;
+&lt;h2 id=&quot;0x00-问题&quot;&gt;&lt;a href=&quot;#0x00-问题&quot; class=&quot;headerlink&quot; title=&quot;0x00 问题&quot;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/img/win10bule1.jpg&quot; alt=&quot;pic1&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;症状分析&lt;/strong&gt;：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**&lt;em&gt;critical_structure_corruption**&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学习Markdown语法</title>
+    <link href="http://madgd.github.io/2016/05/24/Markdown/"/>
+    <id>http://madgd.github.io/2016/05/24/Markdown/</id>
+    <published>2016-05-24T03:18:09.000Z</published>
+    <updated>2021-03-28T07:44:04.413Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Markdown学习笔记&quot;&gt;&lt;a href=&quot;#Markdown学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Markdown学习笔记&quot;&gt;&lt;/a&gt;Markdown学习笔记&lt;/h2&gt;&lt;h3 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;gt;Markdown是一种轻量级的标记语言，它允许人们用易读易写的纯文本格式编写文档，然后转换成丰富的HTML页面。 ——[维基百科](http://zh.wikipedia.org/wiki/Markdown)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Markdown是一种轻量级的标记语言，它允许人们用易读易写的纯文本格式编写文档，然后转换成丰富的HTML页面。 ——&lt;a href=&quot;http://zh.wikipedia.org/wiki/Markdown&quot;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://madgd.github.io/2016/05/16/hello-world/"/>
+    <id>http://madgd.github.io/2016/05/16/hello-world/</id>
+    <published>2016-05-16T16:00:00.000Z</published>
+    <updated>2021-03-28T07:44:04.413Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>

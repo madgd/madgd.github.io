@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -14,10 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"livere":{"order":3},"gitalk":{"order":1},"disqus":{"text":"disqus","order":4},"valine":{"order":2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"livere":{"order":3},"gitalk":{"order":1},"disqus":{"text":"disqus","order":4},"valine":{"order":2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="这是一个悲伤的故事 0x00 问题  症状分析：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**critical_structure_corruption**">
@@ -26,12 +28,12 @@
 <meta property="og:url" content="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="madgd&#39;s blog">
 <meta property="og:description" content="这是一个悲伤的故事 0x00 问题  症状分析：windows10每隔20分钟左右就蓝屏崩溃，错误信息为：**critical_structure_corruption**">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://madgd.github.io/img/win10bule1.jpg">
 <meta property="og:image" content="http://madgd.github.io/img/win10bule2.jpg">
 <meta property="og:image" content="http://madgd.github.io/img/win10bule3.jpg">
 <meta property="article:published_time" content="2016-05-25T03:18:09.000Z">
-<meta property="article:modified_time" content="2021-03-25T08:29:18.981Z">
+<meta property="article:modified_time" content="2021-03-28T07:44:04.413Z">
 <meta property="article:author" content="madgd">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://madgd.github.io/img/win10bule1.jpg">
@@ -45,7 +47,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh'
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -89,6 +91,8 @@
   </style>
 </noscript>
 
+  <script src="/live2d-widget/autoload.js"></script>
+<link rel="alternate" href="/atom.xml" title="madgd's blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -99,7 +103,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -129,46 +133,41 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
 
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
 
-    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
   </ul>
@@ -184,7 +183,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -222,7 +221,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -244,17 +243,17 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2016-05-25 11:18:09" itemprop="dateCreated datePublished" datetime="2016-05-25T11:18:09+08:00">2016-05-25</time>
+              <time title="创建时间：2016-05-25 11:18:09" itemprop="dateCreated datePublished" datetime="2016-05-25T11:18:09+08:00">2016-05-25</time>
             </span>
 
           
-            <span id="/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="驱动引起的win10蓝屏问题" title="Views">
+            <span id="/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="驱动引起的win10蓝屏问题" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
   
@@ -263,7 +262,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-comment"></i>
       </span>
-      <span class="post-meta-item-text">Disqus: </span>
+      <span class="post-meta-item-text">Disqus：</span>
     
     <a title="disqus" href="/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/#disqus_thread" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/25/驱动引起的win10蓝屏问题/" itemprop="commentCount"></span>
@@ -277,7 +276,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-comment"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
@@ -285,17 +284,17 @@
   </span>
   
   <br>
-            <span class="post-meta-item" title="Symbols count in article">
+            <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
               <span>1.7k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>2 mins.</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -414,21 +413,38 @@
         <div class="reward-container">
   <div>丢个钢镚</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donate
+    打赏
   </button>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/img/wechatpay.png" alt="madgd WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/img/wechatpay.png" alt="madgd 微信支付">
+        <p>微信支付</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/img/alipay.jpeg" alt="madgd Alipay">
-        <p>Alipay</p>
+        <img src="/img/alipay.jpeg" alt="madgd 支付宝">
+        <p>支付宝</p>
       </div>
 
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>madgd
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/" title="驱动引起的win10蓝屏问题">http://madgd.github.io/2016/05/25/驱动引起的win10蓝屏问题/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
 
@@ -551,16 +567,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">0x00 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E5%BC%80%E5%A7%8B"><span class="nav-number">2.</span> <span class="nav-text">0x01 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A1%AC%E4%BB%B6%E5%8E%9F%E5%9B%A0"><span class="nav-number">2.1.</span> <span class="nav-text">1. 硬件原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F"><span class="nav-number">2.2.</span> <span class="nav-text">2. 系统还原</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%91%E6%9C%9F%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E7%A1%AC%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">3. 近期安装的软硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%86%B2%E7%AA%81"><span class="nav-number">2.4.</span> <span class="nav-text">4. 安全软件冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%9B%B4%E6%96%B0%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8"><span class="nav-number">2.5.</span> <span class="nav-text">5. 更新官方驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E4%BD%BF%E7%94%A8SFC-scannow%E5%91%BD%E4%BB%A4"><span class="nav-number">2.6.</span> <span class="nav-text">6. 使用SFC &#x2F;scannow命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-%E8%BD%AC%E6%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">0x02 转机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-%E7%BB%A7%E7%BB%AD"><span class="nav-number">4.</span> <span class="nav-text">0x03 继续</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%88%86%E6%9E%90Dump%E6%96%87%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">7. 分析Dump文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-%E7%BB%88%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">0x04 终结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E9%87%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.1.</span> <span class="nav-text">8. 重置系统</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-%E9%97%AE%E9%A2%98"><span class="nav-text">0x00 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E5%BC%80%E5%A7%8B"><span class="nav-text">0x01 开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A1%AC%E4%BB%B6%E5%8E%9F%E5%9B%A0"><span class="nav-text">1. 硬件原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B3%BB%E7%BB%9F%E8%BF%98%E5%8E%9F"><span class="nav-text">2. 系统还原</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%91%E6%9C%9F%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E7%A1%AC%E4%BB%B6"><span class="nav-text">3. 近期安装的软硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%86%B2%E7%AA%81"><span class="nav-text">4. 安全软件冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%9B%B4%E6%96%B0%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8"><span class="nav-text">5. 更新官方驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E4%BD%BF%E7%94%A8SFC-scannow%E5%91%BD%E4%BB%A4"><span class="nav-text">6. 使用SFC &#x2F;scannow命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-%E8%BD%AC%E6%9C%BA"><span class="nav-text">0x02 转机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-%E7%BB%A7%E7%BB%AD"><span class="nav-text">0x03 继续</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%88%86%E6%9E%90Dump%E6%96%87%E4%BB%B6"><span class="nav-text">7. 分析Dump文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-%E7%BB%88%E7%BB%93"><span class="nav-text">0x04 终结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E9%87%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="nav-text">8. 重置系统</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -577,8 +593,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -589,9 +617,25 @@
       <span class="links-of-author-item">
         <a href="mailto:iamnushead@gmail.com" title="E-Mail → mailto:iamnushead@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://liangzhenduo0608.github.io/" title="https:&#x2F;&#x2F;liangzhenduo0608.github.io" rel="noopener" target="_blank">shintaku</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -621,14 +665,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">14k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13 mins.</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
   <div class="addthis_inline_share_toolbox">
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6051d298fa8d501f" async="async"></script>
@@ -641,7 +685,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
-      <span class="site-uv" title="Total Visitors">
+      <span class="site-uv" title="总访客量">
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
@@ -650,7 +694,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
-      <span class="site-pv" title="Total Views">
+      <span class="site-pv" title="总访问量">
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
@@ -843,7 +887,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       owner       : 'madgd',
       admin       : ['madgd'],
       id          : '0e59621d3b482a0ae551f1ca1f655f2c',
-        language: '',
+        language: 'zh-CN',
       distractionFreeMode: true
     });
     gitalk.render('gitalk-container');
