@@ -53,7 +53,7 @@
 <meta property="og:image" content="http://madgd.github.io/img/disqusNotice.png">
 <meta property="og:image" content="http://madgd.github.io/img/donation.png">
 <meta property="article:published_time" content="2021-02-25T03:23:07.000Z">
-<meta property="article:modified_time" content="2021-03-28T07:44:04.413Z">
+<meta property="article:modified_time" content="2021-03-28T08:47:20.333Z">
 <meta property="article:author" content="madgd">
 <meta property="article:tag" content="blog">
 <meta property="article:tag" content="hexo">
@@ -568,12 +568,15 @@
 <h2 id="13-添加加载进度条"><a href="#13-添加加载进度条" class="headerlink" title="13. 添加加载进度条"></a>13. 添加加载进度条</h2><p>看<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-pace">github主页</a></p>
 <h2 id="14-添加看板娘"><a href="#14-添加看板娘" class="headerlink" title="14. 添加看板娘"></a>14. 添加看板娘</h2><p>使用大佬<a target="_blank" rel="noopener" href="https://zhangshuqiao.org/">张书樵</a>修改过得方案：<a target="_blank" rel="noopener" href="https://zhangshuqiao.org/2018-07/%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E6%B7%BB%E5%8A%A0Live2D%E7%9C%8B%E6%9D%BF%E5%A8%98/">在网页中添加 Live2D 看板娘</a></p>
 <p>添加依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;stevenjoezhang&#x2F;live2d-widget.git source&#x2F;live2d-widget</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;stevenjoezhang&#x2F;live2d-widget source&#x2F;live2d-widget</span><br></pre></td></tr></table></figure>
 <p>配置<code>source/live2d-widget/autoload.js</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const live2d_path &#x3D; &quot;&#x2F;live2d-widget&#x2F;&quot;;</span><br></pre></td></tr></table></figure>
 <p>修改<code>themes/next/layout/_layout.swig</code>,在<code>&lt;/head&gt;</code>前添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;live2d-widget&#x2F;autoload.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br></pre></td></tr></table></figure>
 <p>重新预览可看到效果。</p>
+<p>如果涉及到嵌套git的问题，可以在<code>git add</code>前，把<code>live2d-widget</code>的git信息删除：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf source&#x2F;live2d-widget&#x2F;.git</span><br></pre></td></tr></table></figure>
+<p>不知道有什么好办法，这里偷懒解决了。</p>
 <p>不过没有看到大佬提供自定义设置的方法，大家可以试试<a target="_blank" rel="noopener" href="https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/">这个方案</a> 或者 <a target="_blank" rel="noopener" href="https://suyin-blog.club/2019/E3X1V5/">这个方案</a></p>
 <h2 id="15-开启版权声明"><a href="#15-开启版权声明" class="headerlink" title="15. 开启版权声明"></a>15. 开启版权声明</h2><p>查看<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next/issues/1016">issue</a>可知，原<code>post_copyright</code>配置已经移除，使用新的配置<code>themes/next/_config.yml</code>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true</span><br><span class="line">  post: true</span><br><span class="line">  language: ch-zn</span><br></pre></td></tr></table></figure>
