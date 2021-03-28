@@ -9,6 +9,7 @@
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
   <meta name="baidu-site-verification" content="code-bLSFQYE7LE" />
   <meta name="msvalidate.01" content="EEC35592A51BAA32D5849240F641CA6D" />
+  <meta name="google-site-verification" content="z3m3uFne0EBXWIBQmiOiIL3Bu4ZT0r9EPtd5tgiv88Y" />
   <script src="/live2d-widget/autoload.js"></script>
 </head>
 
