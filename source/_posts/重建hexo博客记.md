@@ -597,7 +597,30 @@ rm -rf source/live2d-widget/.git
 ```
 不知道有什么好办法，这里偷懒解决了。
 
-不过没有看到大佬提供自定义设置的方法，大家可以试试[这个方案](https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/) 或者 [这个方案](https://suyin-blog.club/2019/E3X1V5/)
+自定义调整，[参考](https://www.jianshu.com/p/5489b2b3d119)：
+```
+autoload.js：自动加载看板娘
+waifu.css：看板娘样式
+waifu-tips.js：看板娘说话的脚本
+waifu-tips.json：看板娘说话的内容
+```
+修改`waifu.css`:
+```
+#waifu {
+	bottom: -1000px;
+	/* left: 0; */
+	right: 0; #调整为右侧
+  ...
+}
+#waifu-tool {
+	/* right: -10px; */
+	left: -10px; #控制面板调整为左侧
+}
+```
+
+
+别的看板娘实现方案：
+大家可以试试[这个方案](https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/) 或者 [这个方案](https://suyin-blog.club/2019/E3X1V5/)
 
 ## 15. 开启版权声明
 查看[issue](https://github.com/theme-next/hexo-theme-next/issues/1016)可知，原`post_copyright`配置已经移除，使用新的配置`themes/next/_config.yml`:
