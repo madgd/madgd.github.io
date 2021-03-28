@@ -577,7 +577,7 @@ three:
 
 添加依赖：
 ```
-git clone https://github.com/stevenjoezhang/live2d-widget.git source/live2d-widget
+git clone https://github.com/stevenjoezhang/live2d-widget source/live2d-widget
 ```
 配置`source/live2d-widget/autoload.js`：
 ```
@@ -591,7 +591,7 @@ const live2d_path = "/live2d-widget/";
 ```
 重新预览可看到效果。
 
-如果涉及到嵌套git的问题，可以把`live2d-widget`的git信息删除：
+如果涉及到嵌套git的问题，可以在`git add`前，把`live2d-widget`的git信息删除：
 ```
 rm -rf source/live2d-widget/.git
 ```
