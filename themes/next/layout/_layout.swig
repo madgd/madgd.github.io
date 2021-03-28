@@ -8,6 +8,7 @@
   {{ partial('_third-party/analytics/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
   <meta name="baidu-site-verification" content="code-bLSFQYE7LE" />
+  <meta name="msvalidate.01" content="EEC35592A51BAA32D5849240F641CA6D" />
   <script src="/live2d-widget/autoload.js"></script>
 </head>
 
