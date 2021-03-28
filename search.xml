@@ -444,7 +444,13 @@
 <p>如果涉及到嵌套git的问题，可以在<code>git add</code>前，把<code>live2d-widget</code>的git信息删除：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm -rf source&#x2F;live2d-widget&#x2F;.git</span><br></pre></td></tr></table></figure>
 <p>不知道有什么好办法，这里偷懒解决了。</p>
-<p>不过没有看到大佬提供自定义设置的方法，大家可以试试<a href="https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/">这个方案</a> 或者 <a href="https://suyin-blog.club/2019/E3X1V5/">这个方案</a></p>
+<p>自定义调整，<a href="https://www.jianshu.com/p/5489b2b3d119">参考</a>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autoload.js：自动加载看板娘</span><br><span class="line">waifu.css：看板娘样式</span><br><span class="line">waifu-tips.js：看板娘说话的脚本</span><br><span class="line">waifu-tips.json：看板娘说话的内容</span><br></pre></td></tr></table></figure>
+<p>修改<code>waifu.css</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#waifu &#123;</span><br><span class="line">	bottom: -1000px;</span><br><span class="line">	&#x2F;* left: 0; *&#x2F;</span><br><span class="line">	right: 0; #调整为右侧</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">#waifu-tool &#123;</span><br><span class="line">	&#x2F;* right: -10px; *&#x2F;</span><br><span class="line">	left: -10px; #控制面板调整为左侧</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>别的看板娘实现方案：<br>大家可以试试<a href="https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/">这个方案</a> 或者 <a href="https://suyin-blog.club/2019/E3X1V5/">这个方案</a></p>
 <h2 id="15-开启版权声明"><a href="#15-开启版权声明" class="headerlink" title="15. 开启版权声明"></a>15. 开启版权声明</h2><p>查看<a href="https://github.com/theme-next/hexo-theme-next/issues/1016">issue</a>可知，原<code>post_copyright</code>配置已经移除，使用新的配置<code>themes/next/_config.yml</code>:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true</span><br><span class="line">  post: true</span><br><span class="line">  language: ch-zn</span><br></pre></td></tr></table></figure>
 
