@@ -591,6 +591,12 @@ const live2d_path = "/live2d-widget/";
 ```
 重新预览可看到效果。
 
+如果涉及到嵌套git的问题，可以把`live2d-widget`的git信息删除：
+```
+rm -rf source/live2d-widget/.git
+```
+不知道有什么好办法，这里偷懒解决了。
+
 不过没有看到大佬提供自定义设置的方法，大家可以试试[这个方案](https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/) 或者 [这个方案](https://suyin-blog.club/2019/E3X1V5/)
 
 ## 15. 开启版权声明
