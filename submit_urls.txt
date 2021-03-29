@@ -1,2 +1,2 @@
-http://madgd.github.io/2016/05/24/Markdown/
-http://madgd.github.io/2016/05/16/hello-world/
+http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/
+http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/
