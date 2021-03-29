@@ -8,6 +8,8 @@ branches:
     - master # build master branch only
 script:
   - sed -i '1,$s/](\.\.\/img/](\/img/g' source/_posts/*.md
+  - git clone https://madgd:${GH_TOKEN}@github.com/madgd/google_site_token.git temp
+  - cp ./temp/Project.json Project.json
   - hexo cl
   - hexo generate # generate static files
   - hexo d
