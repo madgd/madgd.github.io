@@ -470,6 +470,7 @@
 
 <p>点击站点地图会看到<code>sitemap.xml</code>的文件</p>
 <h2 id="18-向搜索引擎自动提交索引编制请求"><a href="#18-向搜索引擎自动提交索引编制请求" class="headerlink" title="18. 向搜索引擎自动提交索引编制请求"></a>18. 向搜索引擎自动提交索引编制请求</h2><p><a href="https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html">hexo-submit-urls-to-search-engine 中文文档</a>中已经很详细了</p>
+<p>使用ci进行部署时注意：</p>
 <h2 id="12-添加google-ad"><a href="#12-添加google-ad" class="headerlink" title="12. 添加google ad"></a>12. 添加google ad</h2><p><a href="https://www.boris1993.com/others/hexo-next-enable-google-adsense.html">在 NexT 主题中接入 Google AdSense</a></p>
 ]]></content>
       <categories>
