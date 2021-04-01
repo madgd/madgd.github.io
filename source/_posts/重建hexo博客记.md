@@ -674,5 +674,8 @@ menu:
 ## 18. 向搜索引擎自动提交索引编制请求
 [hexo-submit-urls-to-search-engine 中文文档](https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html)中已经很详细了
 
+使用ci进行部署时注意：
+
+
 ## 12. 添加google ad
 [在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)
