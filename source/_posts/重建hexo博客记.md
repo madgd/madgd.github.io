@@ -674,9 +674,11 @@ menu:
 点击站点地图会看到`sitemap.xml`的文件
 
 ## 18. 向搜索引擎自动提交索引编制请求
-[hexo-submit-urls-to-search-engine 中文文档](https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html)中已经很详细了
+[hexo-submit-urls-to-search-engine 中文文档](https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html)中已经很详细了。有疑问一定看一下评论区，也许已有前辈提问过
 
-使用ci进行部署时注意：
+配置google部署时注意：
+
+一定要记得在[旧的网站站长工具](https://www.google.com/webmasters/verification/home)中添加 `Project.json` 中的 `client_email`到所有者
 
 
 ## 12. 添加google ad
