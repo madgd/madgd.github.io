@@ -175,6 +175,55 @@
 ]]></content>
   </entry>
   <entry>
+    <title>电信宽带网络下访问github</title>
+    <url>/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/</url>
+    <content><![CDATA[<p>最近在家卧床休息，偶然间发现家里的网居然没法上github（不是说hw结束了吗o(╥﹏╥)o），这可能会影响学习和交友啊。<br>由于平时总挂着pac模式的代理，偶尔有一些访问不了的会切一下全局模式应付，居然这么久没发现。赶紧看看怎么回事。</p>
+<h1 id="1-电信独秀"><a href="#1-电信独秀" class="headerlink" title="1. 电信独秀"></a>1. 电信独秀</h1><p>我记得在公司的网络下，还有开手机热点的时候，并没有访问不了github啊。先切手机热点试一下（联通），果然能上！</p>
+<p>那就排除了我电脑设置的问题，确定在wifi网络本身。（保险起见，换了一台设备，一样不能上）</p>
+<p>现在只可能是路由器的设置问题或宽带本身的原因。随手搜一下： <code>电信 无法访问github</code></p>
+<p>老哥已经给出答案<a href="https://zhuanlan.zhihu.com/p/168760260">电信运营商 DNS 污染</a>， 电信秀啊！</p>
+<p>(mac 下查询dns解析 可以用 <code>dig</code>命令)</p>
+<p>不过一直挂全局代理毕竟有些不方便，还是搞一下host吧。</p>
+<h1 id="2-dns-host设置"><a href="#2-dns-host设置" class="headerlink" title="2. dns/host设置"></a>2. dns/host设置</h1><p>这实在是基础常规操作，随便找个老哥参考一下，照着操作: </p>
+<p>DNS:</p>
+<p><a href="https://www.cnblogs.com/langdashu/p/5243897.html">找到合适的dns</a></p>
+<p><a href="https://cn.starbytecomputers.com/how-change-dns-server-settings-mac-os-x">修改dns</a></p>
+<p>hosts:</p>
+<p><a href="https://zhuanlan.zhihu.com/p/107334179">修改 Hosts 解决 Github 访问失败马克</a></p>
+<p>里面提到的工具，可以收藏起来备用:</p>
+<ol>
+<li><a href="http://ping.chinaz.com/">http://ping.chinaz.com/</a></li>
+<li><a href="https://www.ipaddress.com/">https://www.ipaddress.com/</a></li>
+</ol>
+<p><img src="/img/ping-chinaz.png"><br><img src="/img/ipaddress.png"></p>
+<p>确定ip和域名的映射后，<code>sudo vi /etc/hosts</code>编辑一下</p>
+<p>mac刷新缓存:<code>sudo killall -HUP mDNSResponder</code></p>
+<h1 id="3-路由器设置"><a href="#3-路由器设置" class="headerlink" title="3. 路由器设置"></a>3. 路由器设置</h1><p>还可以在路由器中设置。(路由器设置后，本地所有设备生效，不用再单独设置)</p>
+<p>根据自己的路由器固件类型设置host，参考:<a href="http://www.mz6.net/news/android/13400.html">几款路由器固件添加修改hosts方法</a></p>
+<p>以 老毛子 固件为例：</p>
+<p>dns：</p>
+<p><img src="/img/router-dns.png"><br>hosts:</p>
+<p><img src="/img/router-hosts.png"></p>
+<p>设置完成后记得应用也没设置，然后重启路由器</p>
+<h1 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h1><p>用 <a href="https://www.ipaddress.com/">ipaddress</a> 查询 <code>madgd.github.io</code>,发现对应4个ip。将ip添加到host中，可正常访问。</p>
+<p>但如果查看别人的github pages 又需要一个一个设置，很麻烦。</p>
+<p>整体方案可能时好时坏。折腾半天也没法保证完美的效果。</p>
+<p><strong>不如选择其他方案:</strong></p>
+<ol>
+<li>切换联通等网络</li>
+<li>给v2ray设置快捷键，快速切换代理模式(推荐ctrl+command+shift+z)</li>
+</ol>
+<p>尴尬</p>
+]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>科学上网</tag>
+        <tag>路由器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>给一组长度不定的数求这些数组合出的最大整数</title>
     <url>/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/</url>
     <content><![CDATA[<h2 id="0x00-问题"><a href="#0x00-问题" class="headerlink" title="0x00 问题"></a>0x00 问题</h2><p>一个题目:</p>
@@ -355,6 +404,9 @@
 <p>点击头像，<code>管理页面</code>，<code>设置</code>可选择支持登录的sns，单击开关，拖动可调整顺序（个人认为微信什么的要往前放）:<br><img src="/img/livereSNS.png"></p>
 <p>开启新评论邮件提醒：<br><img src="/img/livereEmailNotice.png"></p>
 <p><strong>*不知道为什么设置完了就是收不到邮件提醒，哪位老哥了解的请评论区告诉我！</strong></p>
+<blockquote>
+<p><code>21-04-27 update</code>:偶然在手机上看这一篇，发现livere有类似推荐阅读的功能（韩文。之前在web上看都被adblock干掉了-_-||），设置里面没找到关闭的选项。大家自己判断是否保留</p>
+</blockquote>
 <h3 id="2-3-gitalk"><a href="#2-3-gitalk" class="headerlink" title="2.3 gitalk"></a>2.3 gitalk</h3><p>再考虑接入支持github登录管理的，参考<a href="https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/">gitalk</a>:</p>
 <ol>
 <li><p>申请个<a href="https://github.com/settings/applications/new">GitHub Application</a>，Homepage URL和Authorization callback URL就写成博客地址就行<br><img src="/img/githubApplication.png"></p>
@@ -393,7 +445,7 @@
 
 <h2 id="4-引入搜索服务"><a href="#4-引入搜索服务" class="headerlink" title="4. 引入搜索服务"></a>4. 引入搜索服务</h2><p>添加<a href="https://theme-next.iissnan.com/third-party-services.html#local-search">local search</a></p>
 <h2 id="5-添加网易云音乐"><a href="#5-添加网易云音乐" class="headerlink" title="5. 添加网易云音乐"></a>5. 添加网易云音乐</h2><p>参考这位老哥<a href="https://vincentqin.tech/posts/build-a-website-using-hexo/">添加网易云音乐</a></p>
-<center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=20282679&auto=1&height=66"></iframe></center>
+<center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=20282679&auto=0&height=66"></iframe></center>
 
 <h2 id="6-添加分享"><a href="#6-添加分享" class="headerlink" title="6. 添加分享"></a>6. 添加分享</h2><p><a href="https://theme-next.iissnan.com/third-party-services.html#share-addthis">参考</a></p>
 <p>注册完成后，点击右上角<code>Get The Code</code>，获取<code>pubid=</code>后面的id，修改配置</p>
