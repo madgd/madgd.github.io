@@ -521,8 +521,9 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">    sitemap: &#x2F;sitemap.xml || sitemap</span><br></pre></td></tr></table></figure>
 
 <p>点击站点地图会看到<code>sitemap.xml</code>的文件</p>
-<h2 id="18-向搜索引擎自动提交索引编制请求"><a href="#18-向搜索引擎自动提交索引编制请求" class="headerlink" title="18. 向搜索引擎自动提交索引编制请求"></a>18. 向搜索引擎自动提交索引编制请求</h2><p><a href="https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html">hexo-submit-urls-to-search-engine 中文文档</a>中已经很详细了</p>
-<p>使用ci进行部署时注意：</p>
+<h2 id="18-向搜索引擎自动提交索引编制请求"><a href="#18-向搜索引擎自动提交索引编制请求" class="headerlink" title="18. 向搜索引擎自动提交索引编制请求"></a>18. 向搜索引擎自动提交索引编制请求</h2><p><a href="https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html">hexo-submit-urls-to-search-engine 中文文档</a>中已经很详细了。有疑问一定看一下评论区，也许已有前辈提问过</p>
+<p>配置google部署时注意：</p>
+<p>一定要记得在<a href="https://www.google.com/webmasters/verification/home">旧的网站站长工具</a>中添加 <code>Project.json</code> 中的 <code>client_email</code>到所有者</p>
 <h2 id="12-添加google-ad"><a href="#12-添加google-ad" class="headerlink" title="12. 添加google ad"></a>12. 添加google ad</h2><p><a href="https://www.boris1993.com/others/hexo-next-enable-google-adsense.html">在 NexT 主题中接入 Google AdSense</a></p>
 ]]></content>
       <categories>
