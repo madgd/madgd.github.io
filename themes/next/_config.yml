@@ -577,8 +577,8 @@ comments:
   lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    livere:
-     order: 3
+    # livere:
+    #  order: 3
     gitalk:
      order: 1
     disqus:
@@ -590,7 +590,7 @@ comments:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: madgd
   count: true
   #post_meta_order: 0

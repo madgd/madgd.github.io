@@ -380,6 +380,8 @@ todo: 利用server酱开启[微信通知](https://blog.csdn.net/sviptzk/article/
 
 **\*不知道为什么设置完了就是收不到邮件提醒，哪位老哥了解的请评论区告诉我！**
 
+>`21-04-27 update`:偶然在手机上看这一篇，发现livere有类似推荐阅读的功能（韩文。之前在web上看都被adblock干掉了-_-||），设置里面没找到关闭的选项。大家自己判断是否保留
+
 ### 2.3 gitalk
 再考虑接入支持github登录管理的，参考[gitalk](https://marsgt.github.io/2018/12/29/%E5%9C%A8NexT%E4%B8%BB%E9%A2%98%E4%B8%8B%E6%B7%BB%E5%8A%A0Gitalk%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/):
 
@@ -458,7 +460,7 @@ comments:
 ## 5. 添加网易云音乐
 参考这位老哥[添加网易云音乐](https://vincentqin.tech/posts/build-a-website-using-hexo/)
 
-<center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=20282679&auto=1&height=66"></iframe></center>
+<center><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=20282679&auto=0&height=66"></iframe></center>
 
 ## 6. 添加分享
 [参考](https://theme-next.iissnan.com/third-party-services.html#share-addthis)
