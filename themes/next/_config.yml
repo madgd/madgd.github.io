@@ -577,8 +577,8 @@ comments:
   lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    # livere:
-    #  order: 3
+    livere:
+     order: 3
     gitalk:
      order: 1
     disqus:
@@ -590,7 +590,7 @@ comments:
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname: madgd
   count: true
   #post_meta_order: 0
@@ -637,7 +637,7 @@ valine:
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTAyMC81MjkzNy8yOTQxNA== # <your_uid>
+# livere_uid: MTAyMC81MjkzNy8yOTQxNA== # <your_uid>
 
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
