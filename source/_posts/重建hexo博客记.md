@@ -405,6 +405,7 @@ gitalk:
 在github中点击右上角头像，`Settings`->`Emails`确认邮箱；然后点击`Notifications`，根据自己的需要，调整通知选项即可。在自己的博客项目主页右上角，点击watch即可注意自己的邮箱是否将通知提醒识别为垃圾邮件。`Email notification preferences:`
 - [x] Comments on Issues and Pull Requests 
 
+>`21-05-06 update`: 如果出现登陆gitalk时重定向到主页，可能是重定向问题，[参考](https://blog.csdn.net/w47_csdn/article/details/88858343)，将[OAuth Apps](https://github.com/settings/developers) 中的 重定向地址改 为 和 `配置_config.yml` 以及实际博客地址一致
 
 ### 2.4 disqus
 也试下主流的disqus，参考[hexo开启disqus](https://titangene.github.io/article/hexo-disqus.html):
@@ -683,3 +684,28 @@ menu:
 
 ## 12. 添加google ad
 [在 NexT 主题中接入 Google AdSense](https://www.boris1993.com/others/hexo-next-enable-google-adsense.html)
+
+[hexo数据文件](https://hexo.io/zh-cn/docs/data-files.html)
+
+
+### 12.1 注册google ad账号
+进入 [Google AdSense](https://www.google.cn/adsense/start/)主页，点击 “开始使用”，跟随页面提示填好各项信息, 或获得一段代码，要求放到`<head></head>` 标记中.
+
+### 12.2 部署审核
+在站点根目录下新建`source/_data/`文件夹，在其中新建`head.swig`文件：
+```
+# 上一步获取到的代码
+<script data-ad-client="ca-pub-4660071408358428" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+```
+
+将`themes/next/_config.yml`中的注释打开：
+```
+custom_file_path:
+  head: source/_data/head.swig
+```
+
+部署，并验证`<head></head>`中的代码，提交审核。
+
+### 12.3 配置广告模块
+
+### 12.4 配置博客页面
