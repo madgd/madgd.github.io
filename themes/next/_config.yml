@@ -577,13 +577,13 @@ comments:
   lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    livere:
-     order: 3
+    # livere:
+    # #  order: 3
     gitalk:
      order: 1
     disqus:
      text: disqus
-     order: 4
+     order: 3
     valine:
      order: 2
 
@@ -638,6 +638,7 @@ valine:
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 # livere_uid: MTAyMC81MjkzNy8yOTQxNA== # <your_uid>
+livere_uid: 
 
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
@@ -652,7 +653,7 @@ gitalk:
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language: zh-CN
+  language:
 
 
 # ---------------------------------------------------------------
