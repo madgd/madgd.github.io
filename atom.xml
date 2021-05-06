@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>madgd&#39;s blog</title>
-  <icon>http://madgd.github.io/icon.png</icon>
+  <icon>https://madgd.github.io/icon.png</icon>
   
-  <link href="http://madgd.github.io/atom.xml" rel="self"/>
+  <link href="https://madgd.github.io/atom.xml" rel="self"/>
   
-  <link href="http://madgd.github.io/"/>
-  <updated>2021-04-27T16:12:37.277Z</updated>
-  <id>http://madgd.github.io/</id>
+  <link href="https://madgd.github.io/"/>
+  <updated>2021-05-06T11:05:09.989Z</updated>
+  <id>https://madgd.github.io/</id>
   
   <author>
     <name>madgd</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>电信宽带网络下访问github</title>
-    <link href="http://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/"/>
-    <id>http://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/</id>
+    <link href="https://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/"/>
+    <id>https://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/</id>
     <published>2021-04-27T10:17:12.000Z</published>
-    <updated>2021-04-27T16:12:37.277Z</updated>
+    <updated>2021-05-06T11:05:09.989Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在家卧床休息，偶然间发现家里的网居然没法上github（不是说hw结束了吗o(╥﹏╥)o），这可能会影响学习和交友啊。&lt;br&gt;由于平时总挂着pac模式的代理，偶尔有一些访问不了的会切一下全局模式应付，居然这么久没发现。赶紧看看怎么回事。&lt;/p&gt;
@@ -30,21 +30,21 @@
     
     
     
-    <category term="科学上网" scheme="http://madgd.github.io/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <category term="科学上网" scheme="https://madgd.github.io/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
     
-    <category term="科学上网" scheme="http://madgd.github.io/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <category term="科学上网" scheme="https://madgd.github.io/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
-    <category term="路由器" scheme="http://madgd.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    <category term="路由器" scheme="https://madgd.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>重建hexo博客记</title>
-    <link href="http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/"/>
-    <id>http://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/</id>
+    <link href="https://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/"/>
+    <id>https://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/</id>
     <published>2021-02-25T03:23:07.000Z</published>
-    <updated>2021-04-27T16:12:37.277Z</updated>
+    <updated>2021-05-06T11:05:09.989Z</updated>
     
     
     <summary type="html">&lt;p&gt;工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！&lt;/p&gt;
@@ -52,23 +52,23 @@
     
     
     
-    <category term="blog" scheme="http://madgd.github.io/categories/blog/"/>
+    <category term="blog" scheme="https://madgd.github.io/categories/blog/"/>
     
     
-    <category term="blog" scheme="http://madgd.github.io/tags/blog/"/>
+    <category term="blog" scheme="https://madgd.github.io/tags/blog/"/>
     
-    <category term="hexo" scheme="http://madgd.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://madgd.github.io/tags/hexo/"/>
     
-    <category term="next" scheme="http://madgd.github.io/tags/next/"/>
+    <category term="next" scheme="https://madgd.github.io/tags/next/"/>
     
   </entry>
   
   <entry>
     <title>给一组长度不定的数求这些数组合出的最大整数</title>
-    <link href="http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/"/>
-    <id>http://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/</id>
+    <link href="https://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/"/>
+    <id>https://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/</id>
     <published>2016-05-25T16:00:00.000Z</published>
-    <updated>2021-04-27T16:12:37.277Z</updated>
+    <updated>2021-05-06T11:05:09.989Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;0x00-问题&quot;&gt;&lt;a href=&quot;#0x00-问题&quot; class=&quot;headerlink&quot; title=&quot;0x00 问题&quot;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;一个题目:&lt;/p&gt;
@@ -80,16 +80,16 @@
     
     
     
-    <category term="leetcode" scheme="http://madgd.github.io/tags/leetcode/"/>
+    <category term="leetcode" scheme="https://madgd.github.io/tags/leetcode/"/>
     
   </entry>
   
   <entry>
     <title>驱动引起的win10蓝屏问题</title>
-    <link href="http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
-    <id>http://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/</id>
+    <link href="https://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/</id>
     <published>2016-05-25T03:18:09.000Z</published>
-    <updated>2021-04-27T16:12:37.277Z</updated>
+    <updated>2021-05-06T11:05:09.989Z</updated>
     
     
     <summary type="html">&lt;p&gt;这是一个悲伤的故事&lt;/p&gt;
@@ -101,16 +101,16 @@
     
     
     
-    <category term="windows" scheme="http://madgd.github.io/tags/windows/"/>
+    <category term="windows" scheme="https://madgd.github.io/tags/windows/"/>
     
   </entry>
   
   <entry>
     <title>学习Markdown语法</title>
-    <link href="http://madgd.github.io/2016/05/24/Markdown/"/>
-    <id>http://madgd.github.io/2016/05/24/Markdown/</id>
+    <link href="https://madgd.github.io/2016/05/24/Markdown/"/>
+    <id>https://madgd.github.io/2016/05/24/Markdown/</id>
     <published>2016-05-24T03:18:09.000Z</published>
-    <updated>2021-04-27T16:12:37.277Z</updated>
+    <updated>2021-05-06T11:05:09.989Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Markdown学习笔记&quot;&gt;&lt;a href=&quot;#Markdown学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Markdown学习笔记&quot;&gt;&lt;/a&gt;Markdown学习笔记&lt;/h2&gt;&lt;h3 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;gt;Markdown是一种轻量级的标记语言，它允许人们用易读易写的纯文本格式编写文档，然后转换成丰富的HTML页面。 ——[维基百科](http://zh.wikipedia.org/wiki/Markdown)
@@ -126,10 +126,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://madgd.github.io/2016/05/16/hello-world/"/>
-    <id>http://madgd.github.io/2016/05/16/hello-world/</id>
+    <link href="https://madgd.github.io/2016/05/16/hello-world/"/>
+    <id>https://madgd.github.io/2016/05/16/hello-world/</id>
     <published>2016-05-16T16:00:00.000Z</published>
-    <updated>2021-04-27T16:12:37.277Z</updated>
+    <updated>2021-05-06T11:05:09.989Z</updated>
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
