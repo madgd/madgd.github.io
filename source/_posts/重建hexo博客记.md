@@ -1,6 +1,7 @@
 ---
 title: 重建hexo博客记
 date: 2021-02-25 11:23:07
+update: 2021-05-08 16:44:07
 tags: 
   - blog
   - hexo
