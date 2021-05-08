@@ -297,13 +297,15 @@ codeblock:
 ```
 
 可参考[next使用](http://theme-next.iissnan.com/getting-started.html)
-## 1. 开启百度统计&添加阅读量统计&站点统计
+## 1. 开启百度统计&添加阅读量统计&站点统计&google analysis
 
+### 1.1 百度统计
 参考[next使用](http://theme-next.iissnan.com/getting-started.html)相关章节
 
 效果如图：
 ![](../img/baiduAnalytics.png)
 
+### 1.2 阅读量统计
 参考[添加文章阅读量统计](https://cloud.tencent.com/developer/article/1482008)
 
 注意，按以上步骤配置后并不会立即生效，会提示：
@@ -326,6 +328,7 @@ ATTENTION! LeanCloud counter has security bug, see how to solve it here: https:/
 效果如图：
 ![](../img/lcViewCounter.png)
 
+### 1.3 站点统计
 不蒜子统计(这里只开站点统计，不开页面统计)：
 修改配置`themes/next/_config.yml`：
 ```
@@ -341,6 +344,42 @@ busuanzi_count:
   post_views_icon: fa fa-eye
 ```
 ![](../img/busuanzi.png)
+
+### 1.4 google analysis:
+[参考](https://leezhiy.github.io/2020/03/28/2020-03-28-Hexo-Next%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%EF%BC%88%E6%B7%BB%E5%8A%A0%E5%90%84%E7%A7%8D%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD%EF%BC%89/)
+
+[google analysis](https://analytics.google.com/analytics)应该是升级了系统，id有点不一样了：
+
+1. 点击开始追踪后一步一步往下填，创建账号
+![](../img/google_analysis/step1.png)
+
+![](../img/google_analysis/step2.png)
+
+![](../img/google_analysis/step3.png)
+
+2. 新建数据流
+![](../img/google_analysis/step4.png)
+
+选择网站类型：
+![](../img/google_analysis/web.png)
+
+填写站点信息：
+![](../img/google_analysis/step5.png)
+
+3. 获取id并配置next yml
+现在使用的是G大头的id
+G-id：
+![](../img/google_analysis/G-id.png)
+
+将改id配置到`themes/next/_config.yml`并部署:
+```
+# Google Analytics
+google_analytics:
+  tracking_id: G-34 # <app_id>
+```
+
+统计数据会有延迟，耐心等待：
+![](../img/google_analysis/statistics.png)
 
 ## 2. 引入评论
 
