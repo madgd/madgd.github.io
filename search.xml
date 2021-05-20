@@ -175,6 +175,36 @@
 ]]></content>
   </entry>
   <entry>
+    <title>wsL2中挂载windows下的网络硬盘</title>
+    <url>/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/</url>
+    <content><![CDATA[<p>工作中有这样的场景：公司办公主流使用win平台，有在win下建立的共享目录（网络磁盘network drives），但由于习惯使用linux环境（或服务搭建在linux环境上），在win服务器下<a href="https://blog.csdn.net/yushuzhen2008/article/details/104944579">开启了wsl</a>，固产生了在linux下挂载win下的 network drives的需求。</p>
+<h1 id="1-在win下映射网络驱动器"><a href="#1-在win下映射网络驱动器" class="headerlink" title="1. 在win下映射网络驱动器"></a>1. 在win下映射网络驱动器</h1><p>在我的电脑-&gt;计算机 下 映射网络驱动器:<br><img src="/img/wsl/addNetDrive.png"></p>
+<h1 id="2-在wsl中挂载"><a href="#2-在wsl中挂载" class="headerlink" title="2. 在wsl中挂载"></a>2. 在wsl中挂载</h1><p>简要步骤：<a href="https://www.public-health.uiowa.edu/it/support/kb48568/">How to Mount Windows Network Drives in WSL</a></p>
+<p>报错修复：<a href="https://blog.csdn.net/The_Time_Runner/article/details/108555884">Windows下网络共享文件夹挂载到wsl系统</a></p>
+<p>安装文件系统支持：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get update # 如不update，后续安装cifs可能报错</span><br><span class="line">sudo apt-get install cifs-utils</span><br></pre></td></tr></table></figure>
+
+<p>创建挂载锚点：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;mnt&#x2F;w</span><br></pre></td></tr></table></figure>
+
+<p>创建挂载：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># sudo mount -t drvfs &#x2F;&#x2F;server&#x2F;directory &#x2F;mnt&#x2F;w</span><br><span class="line">sudo mount -t drvfs W: &#x2F;mnt&#x2F;w</span><br></pre></td></tr></table></figure>
+
+<p>永久生效（启动后即生效）：<br><code>sudo vi /etc/fstab</code>添加新一行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">W: &#x2F;mnt&#x2F;w drvfs defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>重新加载<code>sudo mount -a</code></p>
+<p>至此挂载搞定，可像普通目录一样访问：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls &#x2F;mnt&#x2F;w</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>wsl</category>
+      </categories>
+      <tags>
+        <tag>wsl</tag>
+        <tag>windows</tag>
+        <tag>磁盘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电信宽带网络下访问github</title>
     <url>/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/</url>
     <content><![CDATA[<p>最近在家卧床休息，偶然间发现家里的网居然没法上github（不是说hw结束了吗o(╥﹏╥)o），这可能会影响学习和交友啊。<br>由于平时总挂着pac模式的代理，偶尔有一些访问不了的会切一下全局模式应付，居然这么久没发现。赶紧看看怎么回事。</p>

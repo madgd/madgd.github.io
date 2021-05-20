@@ -22,19 +22,24 @@
     var CONFIG = {"hostname":"madgd.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":1},"disqus":{"text":"disqus","order":3},"valine":{"order":2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="let&#39;s party">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://madgd.github.io/categories/index.html">
+  <meta name="description" content="工作中有这样的场景：公司办公主流使用win平台，有在win下建立的共享目录（网络磁盘network drives），但由于习惯使用linux环境（或服务搭建在linux环境上），在win服务器下开启了wsl，固产生了在linux下挂载win下的 network drives的需求。 1. 在win下映射网络驱动器在我的电脑-&gt;计算机 下 映射网络驱动器: 2. 在wsl中挂载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wsL2中挂载windows下的网络硬盘">
+<meta property="og:url" content="https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/index.html">
 <meta property="og:site_name" content="madgd&#39;s blog">
-<meta property="og:description" content="let&#39;s party">
+<meta property="og:description" content="工作中有这样的场景：公司办公主流使用win平台，有在win下建立的共享目录（网络磁盘network drives），但由于习惯使用linux环境（或服务搭建在linux环境上），在win服务器下开启了wsl，固产生了在linux下挂载win下的 network drives的需求。 1. 在win下映射网络驱动器在我的电脑-&gt;计算机 下 映射网络驱动器: 2. 在wsl中挂载">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-19T02:48:54.000Z">
-<meta property="article:modified_time" content="2021-05-20T03:50:58.937Z">
+<meta property="og:image" content="https://madgd.github.io/img/wsl/addNetDrive.png">
+<meta property="article:published_time" content="2021-05-20T03:09:47.000Z">
+<meta property="article:modified_time" content="2021-05-20T03:51:16.657Z">
 <meta property="article:author" content="madgd">
+<meta property="article:tag" content="wsl">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="磁盘">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://madgd.github.io/img/wsl/addNetDrive.png">
 
-<link rel="canonical" href="https://madgd.github.io/categories/">
+<link rel="canonical" href="https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/">
 
 
 <script id="page-configurations">
@@ -42,13 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 <script data-ad-client="ca-pub-4660071408358428" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <title>categories | madgd's blog
-</title>
+  <title>wsL2中挂载windows下的网络硬盘 | madgd's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-34VD1DVL8T"></script>
     <script>
@@ -223,55 +227,245 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar.png">
+      <meta itemprop="name" content="madgd">
+      <meta itemprop="description" content="let's party">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="madgd's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          wsL2中挂载windows下的网络硬盘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-20 11:09:47 / 修改时间：11:51:16" itemprop="dateCreated datePublished" datetime="2021-05-20T11:09:47+08:00">2021-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/wsl/" itemprop="url" rel="index"><span itemprop="name">wsl</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" class="post-meta-item leancloud_visitors" data-flag-title="wsL2中挂载windows下的网络硬盘" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/05/20/wsL2中挂载windows下的网络硬盘/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>585</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <p>工作中有这样的场景：公司办公主流使用win平台，有在win下建立的共享目录（网络磁盘network drives），但由于习惯使用linux环境（或服务搭建在linux环境上），在win服务器下<a target="_blank" rel="noopener" href="https://blog.csdn.net/yushuzhen2008/article/details/104944579">开启了wsl</a>，固产生了在linux下挂载win下的 network drives的需求。</p>
+<h1 id="1-在win下映射网络驱动器"><a href="#1-在win下映射网络驱动器" class="headerlink" title="1. 在win下映射网络驱动器"></a>1. 在win下映射网络驱动器</h1><p>在我的电脑-&gt;计算机 下 映射网络驱动器:<br><img src="/img/wsl/addNetDrive.png"></p>
+<h1 id="2-在wsl中挂载"><a href="#2-在wsl中挂载" class="headerlink" title="2. 在wsl中挂载"></a>2. 在wsl中挂载</h1><p>简要步骤：<a target="_blank" rel="noopener" href="https://www.public-health.uiowa.edu/it/support/kb48568/">How to Mount Windows Network Drives in WSL</a></p>
+<p>报错修复：<a target="_blank" rel="noopener" href="https://blog.csdn.net/The_Time_Runner/article/details/108555884">Windows下网络共享文件夹挂载到wsl系统</a></p>
+<p>安装文件系统支持：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update # 如不update，后续安装cifs可能报错</span><br><span class="line">sudo apt-get install cifs-utils</span><br></pre></td></tr></table></figure>
+
+<p>创建挂载锚点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;mnt&#x2F;w</span><br></pre></td></tr></table></figure>
+
+<p>创建挂载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># sudo mount -t drvfs &#x2F;&#x2F;server&#x2F;directory &#x2F;mnt&#x2F;w</span><br><span class="line">sudo mount -t drvfs W: &#x2F;mnt&#x2F;w</span><br></pre></td></tr></table></figure>
+
+<p>永久生效（启动后即生效）：<br><code>sudo vi /etc/fstab</code>添加新一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">W: &#x2F;mnt&#x2F;w drvfs defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>重新加载<code>sudo mount -a</code></p>
+<p>至此挂载搞定，可像普通目录一样访问：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &#x2F;mnt&#x2F;w</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>丢个钢镚</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 3 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wsl/">wsl</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
+      <div style="display: inline-block;">
+        <img src="/img/wechatpay.png" alt="madgd 微信支付">
+        <p>微信支付</p>
       </div>
       
-      
-      
-    </div>
-    
+      <div style="display: inline-block;">
+        <img src="/img/alipay.jpeg" alt="madgd 支付宝">
+        <p>支付宝</p>
+      </div>
 
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>madgd
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" title="wsL2中挂载windows下的网络硬盘">https://madgd.github.io/2021/05/20/wsL2中挂载windows下的网络硬盘/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/wsl/" rel="tag"># wsl</a>
+              <a href="/tags/windows/" rel="tag"># windows</a>
+              <a href="/tags/%E7%A3%81%E7%9B%98/" rel="tag"># 磁盘</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/" rel="prev" title="电信宽带网络下访问github">
+      <i class="fa fa-chevron-left"></i> 电信宽带网络下访问github
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
           
+      <div class="comment-button-group">
+          <a class="btn comment-button gitalk">gitalk</a>
+          <a class="btn comment-button valine">valine</a>
+          <a class="btn comment-button disqus">disqus</a>
+      </div>
+        <div class="comment-position gitalk">
+          <div class="comments" id="gitalk-container"></div>
+        </div>
+        <div class="comment-position valine">
+          <div class="comments" id="valine-comments"></div>
+        </div>
+        <div class="comment-position disqus">
+          
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+        </div>
+      <script>
+        (function() {
+          let commentButton = document.querySelectorAll('.comment-button');
+            commentButton.forEach(element => {
+            let commentClass = element.classList[2];
+            element.addEventListener('click', () => {
+              commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+              element.classList.add('active');
+              document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+              document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+              if (CONFIG.comments.storage) {
+                localStorage.setItem('comments_active', commentClass);
+              }
+            });
+          });
+          let { activeClass } = CONFIG.comments;
+          if (CONFIG.comments.storage) {
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          }
+          if (activeClass) {
+            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            if (activeButton) {
+              activeButton.click();
+            }
+          }
+        })();
+      </script>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -318,6 +512,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%9C%A8win%E4%B8%8B%E6%98%A0%E5%B0%84%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8"><span class="nav-text">1. 在win下映射网络驱动器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%9C%A8wsl%E4%B8%AD%E6%8C%82%E8%BD%BD"><span class="nav-text">2. 在wsl中挂载</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -595,7 +790,46 @@
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
 </script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/";
+    this.page.identifier = "2021/05/20/wsL2中挂载windows下的网络硬盘/";
+    this.page.title = "wsL2中挂载windows下的网络硬盘";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://madgd.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '1ca90711c4a1d311736f',
+      clientSecret: '2f70ae9ce4f250155b035c57ffec9936430546b4',
+      repo        : 'madgd.github.io',
+      owner       : 'madgd',
+      admin       : ['madgd'],
+      id          : '0f1a1a039df99b222b6d7d06c22db9fa',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 
 <script>

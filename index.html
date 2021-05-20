@@ -227,6 +227,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/avatar.png">
+      <meta itemprop="name" content="madgd">
+      <meta itemprop="description" content="let's party">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="madgd's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" class="post-title-link" itemprop="url">wsL2中挂载windows下的网络硬盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-20 11:09:47 / 修改时间：11:51:16" itemprop="dateCreated datePublished" datetime="2021-05-20T11:09:47+08:00">2021-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/wsl/" itemprop="url" rel="index"><span itemprop="name">wsl</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" class="post-meta-item leancloud_visitors" data-flag-title="wsL2中挂载windows下的网络硬盘" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/05/20/wsL2中挂载windows下的网络硬盘/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>585</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>工作中有这样的场景：公司办公主流使用win平台，有在win下建立的共享目录（网络磁盘network drives），但由于习惯使用linux环境（或服务搭建在linux环境上），在win服务器下<a target="_blank" rel="noopener" href="https://blog.csdn.net/yushuzhen2008/article/details/104944579">开启了wsl</a>，固产生了在linux下挂载win下的 network drives的需求。</p>
+<h1 id="1-在win下映射网络驱动器"><a href="#1-在win下映射网络驱动器" class="headerlink" title="1. 在win下映射网络驱动器"></a>1. 在win下映射网络驱动器</h1><p>在我的电脑-&gt;计算机 下 映射网络驱动器:<br><img src="/img/wsl/addNetDrive.png"></p>
+<h1 id="2-在wsl中挂载"><a href="#2-在wsl中挂载" class="headerlink" title="2. 在wsl中挂载"></a>2. 在wsl中挂载</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -258,7 +382,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-08 16:46:32" itemprop="dateModified" datetime="2021-05-08T16:46:32+08:00">2021-05-08</time>
+                <time title="修改时间：2021-05-20 11:51:16" itemprop="dateModified" datetime="2021-05-20T11:51:16+08:00">2021-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -388,7 +512,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-08 16:46:32" itemprop="dateModified" datetime="2021-05-08T16:46:32+08:00">2021-05-08</time>
+                <time title="修改时间：2021-05-20 11:51:16" itemprop="dateModified" datetime="2021-05-20T11:51:16+08:00">2021-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -517,7 +641,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-08 16:46:32" itemprop="dateModified" datetime="2021-05-08T16:46:32+08:00">2021-05-08</time>
+                <time title="修改时间：2021-05-20 11:51:16" itemprop="dateModified" datetime="2021-05-20T11:51:16+08:00">2021-05-20</time>
               </span>
 
           
@@ -640,7 +764,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-08 16:46:32" itemprop="dateModified" datetime="2021-05-08T16:46:32+08:00">2021-05-08</time>
+                <time title="修改时间：2021-05-20 11:51:16" itemprop="dateModified" datetime="2021-05-20T11:51:16+08:00">2021-05-20</time>
               </span>
 
           
@@ -763,7 +887,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-08 16:46:32" itemprop="dateModified" datetime="2021-05-08T16:46:32+08:00">2021-05-08</time>
+                <time title="修改时间：2021-05-20 11:51:16" itemprop="dateModified" datetime="2021-05-20T11:51:16+08:00">2021-05-20</time>
               </span>
 
           
@@ -916,20 +1040,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -989,7 +1113,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
