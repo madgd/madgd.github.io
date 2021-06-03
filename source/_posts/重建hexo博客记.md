@@ -746,6 +746,15 @@ custom_file_path:
 
 部署，并验证`<head></head>`中的代码，提交审核。
 
+焦急等待了两周之后，审核结果却是一瓢冷水：
+![](../img/googleADrejection.png)
+
+打开adsense主页，看到：
+![](../img/googleADrejection2.png)
+
+还是内容较少，原创度不足。等到后续积累起来之后再试吧。审核通过生效后，再来更新下面的内容。
+
+[原创度问题可以看看这篇](https://geektutu.com/post/blog-experience-4.html)
 ### 12.3 配置广告模块
 
 ### 12.4 配置博客页面
