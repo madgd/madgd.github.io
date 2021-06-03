@@ -6,7 +6,7 @@
   <link href="https://madgd.github.io/atom.xml" rel="self"/>
   
   <link href="https://madgd.github.io/"/>
-  <updated>2021-06-03T17:12:29.913Z</updated>
+  <updated>2021-06-03T17:22:00.801Z</updated>
   <id>https://madgd.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://madgd.github.io/2021/05/22/%E4%BA%BA%E5%9C%A8%E5%9B%A7%E9%80%94%E7%A5%9E%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%B7%A8%E5%9F%8E%E8%B5%B6%E6%9C%BA%E8%AE%B0/"/>
     <id>https://madgd.github.io/2021/05/22/%E4%BA%BA%E5%9C%A8%E5%9B%A7%E9%80%94%E7%A5%9E%E6%93%8D%E4%BD%9C%E4%B9%8B%E8%B7%A8%E5%9F%8E%E8%B5%B6%E6%9C%BA%E8%AE%B0/</id>
     <published>2021-05-22T15:07:04.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.801Z</updated>
     
     
     <summary type="html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=27901832&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
@@ -47,7 +47,7 @@
     <link href="https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/"/>
     <id>https://madgd.github.io/2021/05/20/wsL2%E4%B8%AD%E6%8C%82%E8%BD%BDwindows%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98/</id>
     <published>2021-05-20T03:09:47.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.801Z</updated>
     
     
     <summary type="html">&lt;p&gt;工作中有这样的场景：公司办公主流使用win平台，有在win下建立的共享目录（网络磁盘network drives），但由于习惯使用linux环境（或服务搭建在linux环境上），在win服务器下&lt;a href=&quot;https://blog.csdn.net/yushuzhen2008/article/details/104944579&quot;&gt;开启了wsl&lt;/a&gt;，固产生了在linux下挂载win下的 network drives的需求。&lt;/p&gt;
@@ -72,7 +72,7 @@
     <link href="https://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/"/>
     <id>https://madgd.github.io/2021/04/27/%E7%94%B5%E4%BF%A1%E5%AE%BD%E5%B8%A6%E7%BD%91%E7%BB%9C%E4%B8%8B%E8%AE%BF%E9%97%AEgithub/</id>
     <published>2021-04-27T10:17:12.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.801Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在家卧床休息，偶然间发现家里的网居然没法上github（不是说hw结束了吗o(╥﹏╥)o），这可能会影响学习和交友啊。&lt;br&gt;由于平时总挂着pac模式的代理，偶尔有一些访问不了的会切一下全局模式应付，居然这么久没发现。赶紧看看怎么回事。&lt;/p&gt;
@@ -95,7 +95,7 @@
     <link href="https://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/"/>
     <id>https://madgd.github.io/2021/02/25/%E9%87%8D%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E8%AE%B0/</id>
     <published>2021-02-25T03:23:07.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.805Z</updated>
     
     
     <summary type="html">&lt;p&gt;工作几年后做了一次人生重大的选择，终于有时间和精力来搞点业余的东西，就想到了曾经短暂玩过的博客。打开自己的github，看到托管在pages上的hexo博客上一篇还在遥远的2016年，还是不免有些感慨，时间过得真的好快。当时的自己无论如何也想不到再写下一篇博客的时候会是现在这样吧。不过先不想这么多，是时候恢复hexo博客，开启新的篇章了！&lt;/p&gt;
@@ -119,7 +119,7 @@
     <link href="https://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/"/>
     <id>https://madgd.github.io/2016/05/25/%E7%BB%99%E4%B8%80%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%8D%E5%AE%9A%E7%9A%84%E6%95%B0%E6%B1%82%E8%BF%99%E4%BA%9B%E6%95%B0%E7%BB%84%E5%90%88%E5%87%BA%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B4%E6%95%B0/</id>
     <published>2016-05-25T16:00:00.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.801Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;0x00-问题&quot;&gt;&lt;a href=&quot;#0x00-问题&quot; class=&quot;headerlink&quot; title=&quot;0x00 问题&quot;&gt;&lt;/a&gt;0x00 问题&lt;/h2&gt;&lt;p&gt;一个题目:&lt;/p&gt;
@@ -140,7 +140,7 @@
     <link href="https://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
     <id>https://madgd.github.io/2016/05/25/%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7%E7%9A%84win10%E8%93%9D%E5%B1%8F%E9%97%AE%E9%A2%98/</id>
     <published>2016-05-25T03:18:09.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.805Z</updated>
     
     
     <summary type="html">&lt;p&gt;这是一个悲伤的故事&lt;/p&gt;
@@ -161,7 +161,7 @@
     <link href="https://madgd.github.io/2016/05/24/Markdown/"/>
     <id>https://madgd.github.io/2016/05/24/Markdown/</id>
     <published>2016-05-24T03:18:09.000Z</published>
-    <updated>2021-06-03T17:12:29.913Z</updated>
+    <updated>2021-06-03T17:22:00.801Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Markdown学习笔记&quot;&gt;&lt;a href=&quot;#Markdown学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Markdown学习笔记&quot;&gt;&lt;/a&gt;Markdown学习笔记&lt;/h2&gt;&lt;h3 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;gt;Markdown是一种轻量级的标记语言，它允许人们用易读易写的纯文本格式编写文档，然后转换成丰富的HTML页面。 ——[维基百科](http://zh.wikipedia.org/wiki/Markdown)
@@ -180,7 +180,7 @@
     <link href="https://madgd.github.io/2016/05/16/hello-world/"/>
     <id>https://madgd.github.io/2016/05/16/hello-world/</id>
     <published>2016-05-16T16:00:00.000Z</published>
-    <updated>2021-06-03T17:12:29.909Z</updated>
+    <updated>2021-06-03T17:22:00.801Z</updated>
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
